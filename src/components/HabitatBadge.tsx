@@ -51,7 +51,7 @@ export const HABITAT_SCENES: Record<string, { gradient: string; deco: Array<{ em
   },
 };
 
-export const HABITAT_STYLES: Record<string, { bg: string; text: string; border: string; cardBorder: string; topStripe: string; hoverShadow: string; icon: string; label: string }> = {
+export const HABITAT_STYLES: Record<string, { bg: string; text: string; border: string; cardBorder: string; topStripe: string; hoverShadow: string; borderFilter: string; icon: string; label: string }> = {
   Bright: {
     bg: 'bg-yellow-700/40',
     text: 'text-yellow-300',
@@ -59,6 +59,7 @@ export const HABITAT_STYLES: Record<string, { bg: string; text: string; border: 
     cardBorder: 'border-yellow-700/50',
     topStripe: 'border-t-2 border-yellow-500/70',
     hoverShadow: 'hover:shadow-yellow-900/40',
+    borderFilter: 'invert(1) sepia(1) hue-rotate(22deg) saturate(5) brightness(1.1)',
     icon: '☀️',
     label: 'Bright',
   },
@@ -69,6 +70,7 @@ export const HABITAT_STYLES: Record<string, { bg: string; text: string; border: 
     cardBorder: 'border-orange-800/50',
     topStripe: 'border-t-2 border-orange-500/70',
     hoverShadow: 'hover:shadow-orange-900/40',
+    borderFilter: 'invert(1) sepia(1) hue-rotate(8deg) saturate(7) brightness(1.1)',
     icon: '🔥',
     label: 'Warm',
   },
@@ -79,6 +81,7 @@ export const HABITAT_STYLES: Record<string, { bg: string; text: string; border: 
     cardBorder: 'border-teal-800/50',
     topStripe: 'border-t-2 border-teal-500/70',
     hoverShadow: 'hover:shadow-teal-900/40',
+    borderFilter: 'invert(1) sepia(1) hue-rotate(137deg) saturate(4) brightness(0.9)',
     icon: '💧',
     label: 'Humid',
   },
@@ -89,6 +92,7 @@ export const HABITAT_STYLES: Record<string, { bg: string; text: string; border: 
     cardBorder: 'border-yellow-900/50',
     topStripe: 'border-t-2 border-amber-600/70',
     hoverShadow: 'hover:shadow-yellow-900/40',
+    borderFilter: 'invert(1) sepia(1) hue-rotate(15deg) saturate(4) brightness(0.95)',
     icon: '🏜️',
     label: 'Dry',
   },
@@ -99,6 +103,7 @@ export const HABITAT_STYLES: Record<string, { bg: string; text: string; border: 
     cardBorder: 'border-violet-800/50',
     topStripe: 'border-t-2 border-violet-500/70',
     hoverShadow: 'hover:shadow-violet-900/40',
+    borderFilter: 'invert(1) sepia(1) hue-rotate(232deg) saturate(5) brightness(0.9)',
     icon: '🌙',
     label: 'Dark',
   },
@@ -109,6 +114,7 @@ export const HABITAT_STYLES: Record<string, { bg: string; text: string; border: 
     cardBorder: 'border-sky-800/50',
     topStripe: 'border-t-2 border-sky-500/70',
     hoverShadow: 'hover:shadow-sky-900/40',
+    borderFilter: 'invert(1) sepia(1) hue-rotate(162deg) saturate(4) brightness(1.0)',
     icon: '❄️',
     label: 'Cool',
   },

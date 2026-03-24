@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 const TABS = [
   { to: '/', label: 'Pokédex', icon: '📖' },
   { to: '/events', label: 'Event Pokédex', icon: '⭐' },
+  { to: '/specialties', label: 'Specialties', icon: '⚡' },
   { to: '/habitats', label: 'Habitat Dex', icon: '🏡' },
   { to: '/crafting', label: 'Crafting', icon: '🔨' },
 ];

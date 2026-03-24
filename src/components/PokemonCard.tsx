@@ -81,22 +81,29 @@ export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent 
       onClick={onClick}
     >
       {isEvent && (
-        <div className="absolute top-2 left-2 z-10 flex items-center gap-1 bg-yellow-500/90 text-yellow-900 text-xs font-bold px-2 py-0.5 rounded-full">
+        <div className="absolute top-2 left-2 z-30 flex items-center gap-1 bg-yellow-500/90 text-yellow-900 text-xs font-bold px-2 py-0.5 rounded-full">
           ⭐ Event
         </div>
       )}
 
       {isFound && (
-        <div className="absolute top-2 right-2 z-10">
+        <div className="absolute top-2 right-2 z-30">
           <span className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white text-xs">✓</span>
         </div>
       )}
 
       {/* Sprite area */}
       <div
-        className={`relative flex items-center justify-center pt-6 pb-2 transition-colors
+        className={`relative flex items-center justify-center pt-6 pb-2 transition-colors overflow-hidden
           ${habitatStyle ? `${habitatStyle.bg} ${habitatStyle.topStripe}` : 'bg-slate-800/40 border-t-2 border-gray-700/40'}`}
       >
+        {/* Ornamental border overlay — cropped to sprite area */}
+        <img
+          src="/card-border.png"
+          aria-hidden="true"
+          className={`absolute inset-0 w-full h-full object-fill pointer-events-none mix-blend-screen z-10 ${habitatStyle ? 'opacity-15' : 'opacity-40'}`}
+          style={{ filter: habitatStyle?.borderFilter ?? 'invert(1) brightness(0.5)' }}
+        />
         <PokemonSprite pokemon={pokemon} />
       </div>
 

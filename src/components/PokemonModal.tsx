@@ -8,6 +8,7 @@ import eventData from '../data/events.json';
 import { getSpriteUrl, formatNameForDb } from '../utils/sprite';
 import { HabitatDetailModal } from './HabitatDetailModal';
 import type { HabitatEntry } from './HabitatDetailModal';
+import { SpecialtyModal } from './SpecialtyModal';
 
 const HABITATS_MAP = new Map<string, HabitatEntry>(
   (habitatsData as HabitatEntry[]).map((h) => [h.name, h])
@@ -113,13 +114,29 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
   const [spriteSrc, setSpriteSrc] = useState(getSpriteUrl(pokemon));
   const [spriteErrored, setSpriteErrored] = useState(false);
   const [selectedHabitat, setSelectedHabitat] = useState<HabitatEntry | null>(null);
+  const [selectedSpecialty, setSelectedSpecialty] = useState<string | null>(null);
+
+  const allPokemon = useMemo(() => [
+    ...(pokemonData as Pokemon[]),
+    ...(eventData as Pokemon[]),
+  ], []);
 
   const pokemonMap = useMemo(() => {
     const m = new Map<string, Pokemon>();
-    (pokemonData as Pokemon[]).forEach((p) => m.set(p.name, p));
-    (eventData as Pokemon[]).forEach((p) => m.set(p.name, p));
+    allPokemon.forEach((p) => m.set(p.name, p));
     return m;
-  }, []);
+  }, [allPokemon]);
+
+  const specialtyPokemonMap = useMemo(() => {
+    const map = new Map<string, Pokemon[]>();
+    for (const p of allPokemon) {
+      for (const s of p.specialties ?? []) {
+        if (!map.has(s)) map.set(s, []);
+        map.get(s)!.push(p);
+      }
+    }
+    return map;
+  }, [allPokemon]);
 
   useEffect(() => {
     setSpriteSrc(getSpriteUrl(pokemon));
@@ -354,9 +371,14 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {pokemon.specialties.map((s) => (
-                    <span key={s} className={`text-xs px-3 py-1.5 rounded-lg border font-semibold ${SPECIALTY_COLORS[s] ?? 'bg-gray-800 border-gray-700 text-gray-300'}`}>
+                    <button
+                      key={s}
+                      onClick={() => setSelectedSpecialty(s)}
+                      className={`text-xs px-3 py-1.5 rounded-lg border font-semibold transition-all duration-100 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md
+                        ${SPECIALTY_COLORS[s] ?? 'bg-gray-800 border-gray-700 text-gray-300'}`}
+                    >
                       {s}
-                    </span>
+                    </button>
                   ))}
                 </div>
               </section>
@@ -444,6 +466,20 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
           onNavigateToPokemon?.(name);
         }}
         onClose={() => setSelectedHabitat(null)}
+      />
+    )}
+
+    {/* Specialty modal — opens when a specialty badge is clicked */}
+    {selectedSpecialty && (
+      <SpecialtyModal
+        specialtyName={selectedSpecialty}
+        pokemonList={specialtyPokemonMap.get(selectedSpecialty) ?? []}
+        foundSet={foundSet ?? new Set()}
+        onPokemonClick={(p) => {
+          setSelectedSpecialty(null);
+          onNavigateToPokemon?.(p.name);
+        }}
+        onClose={() => setSelectedSpecialty(null)}
       />
     )}
     </>

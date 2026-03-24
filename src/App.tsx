@@ -4,6 +4,7 @@ import { MainDex } from './pages/MainDex';
 import { EventDex } from './pages/EventDex';
 import { HabitatDex } from './pages/HabitatDex';
 import { CraftingDex } from './pages/CraftingDex';
+import { SpecialtiesDex } from './pages/SpecialtiesDex';
 
 export default function App() {
   return (
@@ -52,6 +53,7 @@ export default function App() {
             <Route path="/events" element={<EventDex />} />
             <Route path="/habitats" element={<HabitatDex />} />
             <Route path="/crafting" element={<CraftingDex />} />
+            <Route path="/specialties" element={<SpecialtiesDex />} />
           </Routes>
         </main>
 
