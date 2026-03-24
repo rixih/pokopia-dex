@@ -34,7 +34,7 @@ export default function App() {
               <div>
                 <h1 className="text-lg font-bold text-white leading-tight">Pokopia Pokédex</h1>
                 <p className="text-xs text-gray-500 leading-tight hidden sm:block">
-                  Pokémon Pokopia — Nintendo Switch 2
+                  Pokémon Pokopia - Nintendo Switch 2
                 </p>
                 <p className="text-xs text-gray-600 leading-tight hidden sm:block">
                   Fan-made by <span className="text-yellow-400 font-semibold">Rixih</span>
