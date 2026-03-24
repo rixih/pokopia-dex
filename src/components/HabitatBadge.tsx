@@ -2,7 +2,7 @@ import type { IdealHabitat } from '../types/pokemon';
 
 export const HABITAT_SCENES: Record<string, { gradient: string; deco: Array<{ emoji: string; style: string }> }> = {
   Bright: {
-    gradient: 'bg-gradient-to-br from-amber-800/70 via-yellow-700/50 to-amber-900/60',
+    gradient: 'bg-gradient-to-br from-yellow-700/70 via-yellow-500/50 to-yellow-800/60',
     deco: [
       { emoji: '☀️', style: 'absolute top-2 left-4 text-3xl opacity-90' },
       { emoji: '🌳', style: 'absolute bottom-0 right-6 text-4xl opacity-80' },
@@ -53,9 +53,9 @@ export const HABITAT_SCENES: Record<string, { gradient: string; deco: Array<{ em
 
 export const HABITAT_STYLES: Record<string, { bg: string; text: string; border: string; icon: string; label: string }> = {
   Bright: {
-    bg: 'bg-amber-900/40',
-    text: 'text-amber-300',
-    border: 'border-amber-600/40',
+    bg: 'bg-yellow-700/40',
+    text: 'text-yellow-300',
+    border: 'border-yellow-500/40',
     icon: '☀️',
     label: 'Bright',
   },
