@@ -8,9 +8,19 @@ import { CraftingDex } from './pages/CraftingDex';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-950">
+      <div className="min-h-screen bg-gray-950 relative">
+        {/* Background */}
+        <img
+          src="/bg.png"
+          alt=""
+          className="fixed inset-0 w-full h-full object-cover z-0 opacity-100"
+          aria-hidden="true"
+        />
+        {/* Dark overlay to tone down background */}
+        <div className="fixed inset-0 z-[1] bg-black/60" aria-hidden="true" />
+
         {/* Header */}
-        <header className="sticky top-0 z-40 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/60">
+        <header className="sticky top-0 z-40 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/60 relative">
           <div className="max-w-screen-2xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <div className="flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-red-700 shadow-lg">
@@ -28,7 +38,7 @@ export default function App() {
         </header>
 
         {/* Main */}
-        <main className="max-w-screen-2xl mx-auto px-4 py-6">
+        <main className="relative z-10 max-w-screen-2xl mx-auto px-4 py-6">
           <Routes>
             <Route path="/" element={<MainDex />} />
             <Route path="/events" element={<EventDex />} />
@@ -38,7 +48,7 @@ export default function App() {
         </main>
 
         {/* Footer */}
-        <footer className="mt-16 border-t border-gray-800/40 py-6 text-center text-xs text-gray-600">
+        <footer className="relative z-10 mt-16 border-t border-gray-800/40 py-6 text-center text-xs text-gray-600">
           <p>Pokémon Pokopia Pokédex — Fan Database</p>
           <p className="mt-1">Data sourced from <a href="https://www.ign.com/wikis/pokemon-pokopia" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-400">IGN Wiki</a> · Habitat data from <a href="https://www.polygon.com/pokemon-pokopia-habitat-dex-list-requirements-unlock/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-400">Polygon</a> · Sprites from <a href="https://pokemondb.net" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-400">Pokémon Database</a></p>
           <p className="mt-1">Pokémon © Nintendo / Game Freak</p>
