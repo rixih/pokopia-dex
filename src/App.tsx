@@ -57,7 +57,7 @@ export default function App() {
 
         {/* Footer */}
         <footer className="relative z-10 mt-16 border-t border-gray-800/40 py-6 text-center text-xs text-gray-600">
-          <p>Pokémon Pokopia Pokédex — Fan Database</p>
+          <p>Pokémon Pokopia - Fan Database</p>
           <p className="mt-1">Data sourced from <a href="https://www.ign.com/wikis/pokemon-pokopia" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-400">IGN Wiki</a> · Habitat data from <a href="https://www.polygon.com/pokemon-pokopia-habitat-dex-list-requirements-unlock/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-400">Polygon</a> · Sprites from <a href="https://pokemondb.net" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-400">Pokémon Database</a></p>
           <p className="mt-1">Pokémon © Nintendo / Game Freak</p>
         </footer>
