@@ -235,7 +235,7 @@ function CraftingCard({ item }: { item: CraftingItem }) {
   const icon = CATEGORY_ICONS[item.category] ?? '📦';
 
   return (
-    <div className={`flex flex-col rounded-2xl border overflow-hidden ${style.border} bg-gray-900/80`}>
+    <div className={`flex flex-col rounded-2xl border overflow-hidden backdrop-blur-sm ${style.border} bg-slate-900/60 hover:bg-slate-800/70 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl`}>
       {/* Image area */}
       <div className={`flex items-center justify-center pt-6 pb-3 ${style.bg}`}>
         {item.imageUrl && !imgError ? (

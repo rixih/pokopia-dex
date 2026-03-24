@@ -20,10 +20,10 @@ export default function App() {
         <div className="fixed inset-0 z-[1] bg-black/60" aria-hidden="true" />
 
         {/* Header */}
-        <header className="sticky top-0 z-40 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/60 relative">
+        <header className="sticky top-0 z-40 bg-slate-950/85 backdrop-blur-md border-b border-purple-900/40 relative">
           <div className="max-w-screen-2xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <svg viewBox="0 0 100 100" className="w-9 h-9" aria-hidden="true">
+              <svg viewBox="0 0 100 100" className="w-9 h-9 transition-transform duration-500 hover:rotate-12" aria-hidden="true">
                 <circle cx="50" cy="50" r="48" fill="#1a1a1a" stroke="#c0392b" strokeWidth="3"/>
                 <path d="M2 50 a48 48 0 0 1 96 0" fill="#c0392b"/>
                 <path d="M2 50 a48 48 0 0 0 96 0" fill="#f0f0f0"/>
@@ -32,7 +32,7 @@ export default function App() {
                 <circle cx="50" cy="50" r="9" fill="#f0f0f0"/>
               </svg>
               <div>
-                <h1 className="text-lg font-bold text-white leading-tight">Pokopia Pokédex</h1>
+                <h1 className="text-lg font-bold leading-tight bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Pokopia Pokédex</h1>
                 <p className="text-xs text-gray-500 leading-tight hidden sm:block">
                   Pokémon Pokopia - Nintendo Switch 2
                 </p>

@@ -69,10 +69,14 @@ export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent 
 
   return (
     <div
-      className={`group relative flex flex-col rounded-2xl border cursor-pointer transition-all duration-200 overflow-hidden pokemon-card-enter
+      className={`group relative flex flex-col rounded-2xl border cursor-pointer transition-all duration-200 overflow-hidden pokemon-card-enter backdrop-blur-sm
         ${isFound
-          ? 'border-emerald-600/60 bg-gradient-to-b from-emerald-950/60 to-gray-900/90'
-          : 'border-gray-700/50 bg-gray-900/80 hover:border-gray-500/70 hover:bg-gray-800/80'
+          ? habitatStyle
+            ? `${habitatStyle.cardBorder} ring-1 ring-emerald-600/40 bg-slate-900/60 hover:bg-slate-800/70 ${habitatStyle.hoverShadow}`
+            : 'border-gray-700/40 ring-1 ring-emerald-600/40 bg-slate-900/60 hover:bg-slate-800/70 hover:shadow-emerald-900/30'
+          : habitatStyle
+            ? `${habitatStyle.cardBorder} bg-slate-900/60 hover:bg-slate-800/70 ${habitatStyle.hoverShadow}`
+            : 'border-gray-700/40 bg-slate-900/60 hover:bg-slate-800/70 hover:shadow-slate-900/40'
         } hover:-translate-y-0.5 hover:shadow-xl`}
       onClick={onClick}
     >
@@ -91,7 +95,7 @@ export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent 
       {/* Sprite area */}
       <div
         className={`relative flex items-center justify-center pt-6 pb-2 transition-colors
-          ${habitatStyle ? `${habitatStyle.bg}` : 'bg-gray-800/40'}`}
+          ${habitatStyle ? `${habitatStyle.bg} ${habitatStyle.topStripe}` : 'bg-slate-800/40 border-t-2 border-gray-700/40'}`}
       >
         <PokemonSprite pokemon={pokemon} />
       </div>

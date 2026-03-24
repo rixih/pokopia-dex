@@ -58,6 +58,96 @@ function ChipButton({
   );
 }
 
+const TYPE_CHIP_COLORS: Record<string, { active: string; hover: string }> = {
+  Normal:   { active: 'border-gray-400 bg-gray-400/20 text-gray-200',     hover: 'hover:border-gray-400/60 hover:bg-gray-400/10 hover:text-gray-200' },
+  Fire:     { active: 'border-orange-500 bg-orange-500/20 text-orange-200', hover: 'hover:border-orange-500/60 hover:bg-orange-500/10 hover:text-orange-200' },
+  Water:    { active: 'border-blue-500 bg-blue-500/20 text-blue-200',      hover: 'hover:border-blue-500/60 hover:bg-blue-500/10 hover:text-blue-200' },
+  Electric: { active: 'border-yellow-400 bg-yellow-400/20 text-yellow-200', hover: 'hover:border-yellow-400/60 hover:bg-yellow-400/10 hover:text-yellow-200' },
+  Grass:    { active: 'border-green-500 bg-green-500/20 text-green-200',   hover: 'hover:border-green-500/60 hover:bg-green-500/10 hover:text-green-200' },
+  Ice:      { active: 'border-cyan-300 bg-cyan-300/20 text-cyan-200',      hover: 'hover:border-cyan-300/60 hover:bg-cyan-300/10 hover:text-cyan-200' },
+  Fighting: { active: 'border-red-600 bg-red-600/20 text-red-200',         hover: 'hover:border-red-600/60 hover:bg-red-600/10 hover:text-red-200' },
+  Poison:   { active: 'border-purple-500 bg-purple-500/20 text-purple-200', hover: 'hover:border-purple-500/60 hover:bg-purple-500/10 hover:text-purple-200' },
+  Ground:   { active: 'border-amber-600 bg-amber-600/20 text-amber-200',   hover: 'hover:border-amber-600/60 hover:bg-amber-600/10 hover:text-amber-200' },
+  Flying:   { active: 'border-sky-400 bg-sky-400/20 text-sky-200',         hover: 'hover:border-sky-400/60 hover:bg-sky-400/10 hover:text-sky-200' },
+  Psychic:  { active: 'border-pink-500 bg-pink-500/20 text-pink-200',      hover: 'hover:border-pink-500/60 hover:bg-pink-500/10 hover:text-pink-200' },
+  Bug:      { active: 'border-lime-500 bg-lime-500/20 text-lime-200',      hover: 'hover:border-lime-500/60 hover:bg-lime-500/10 hover:text-lime-200' },
+  Rock:     { active: 'border-stone-400 bg-stone-400/20 text-stone-200',   hover: 'hover:border-stone-400/60 hover:bg-stone-400/10 hover:text-stone-200' },
+  Ghost:    { active: 'border-indigo-500 bg-indigo-500/20 text-indigo-200', hover: 'hover:border-indigo-500/60 hover:bg-indigo-500/10 hover:text-indigo-200' },
+  Dragon:   { active: 'border-violet-500 bg-violet-500/20 text-violet-200', hover: 'hover:border-violet-500/60 hover:bg-violet-500/10 hover:text-violet-200' },
+  Dark:     { active: 'border-neutral-500 bg-neutral-500/20 text-neutral-200', hover: 'hover:border-neutral-500/60 hover:bg-neutral-500/10 hover:text-neutral-200' },
+  Steel:    { active: 'border-slate-400 bg-slate-400/20 text-slate-200',   hover: 'hover:border-slate-400/60 hover:bg-slate-400/10 hover:text-slate-200' },
+  Fairy:    { active: 'border-rose-400 bg-rose-400/20 text-rose-200',      hover: 'hover:border-rose-400/60 hover:bg-rose-400/10 hover:text-rose-200' },
+};
+
+const RARITY_CHIP_COLORS: Record<string, { active: string; hover: string }> = {
+  Common:     { active: 'border-gray-400 bg-gray-400/20 text-gray-200',     hover: 'hover:border-gray-400/60 hover:bg-gray-400/10 hover:text-gray-200' },
+  Rare:       { active: 'border-blue-500 bg-blue-500/20 text-blue-200',     hover: 'hover:border-blue-500/60 hover:bg-blue-500/10 hover:text-blue-200' },
+  'Very Rare':{ active: 'border-violet-500 bg-violet-500/20 text-violet-200', hover: 'hover:border-violet-500/60 hover:bg-violet-500/10 hover:text-violet-200' },
+  Legendary:  { active: 'border-yellow-400 bg-yellow-400/20 text-yellow-200', hover: 'hover:border-yellow-400/60 hover:bg-yellow-400/10 hover:text-yellow-200' },
+};
+
+const HABITAT_CHIP_COLORS: Record<string, { active: string; hover: string }> = {
+  Bright: { active: 'border-yellow-500 bg-yellow-500/20 text-yellow-200', hover: 'hover:border-yellow-500/60 hover:bg-yellow-500/10 hover:text-yellow-200' },
+  Warm:   { active: 'border-orange-500 bg-orange-500/20 text-orange-200', hover: 'hover:border-orange-500/60 hover:bg-orange-500/10 hover:text-orange-200' },
+  Humid:  { active: 'border-teal-500 bg-teal-500/20 text-teal-200',       hover: 'hover:border-teal-500/60 hover:bg-teal-500/10 hover:text-teal-200' },
+  Dry:    { active: 'border-amber-600 bg-amber-600/20 text-amber-200',    hover: 'hover:border-amber-600/60 hover:bg-amber-600/10 hover:text-amber-200' },
+  Dark:   { active: 'border-violet-600 bg-violet-600/20 text-violet-200', hover: 'hover:border-violet-600/60 hover:bg-violet-600/10 hover:text-violet-200' },
+  Cool:   { active: 'border-sky-500 bg-sky-500/20 text-sky-200',          hover: 'hover:border-sky-500/60 hover:bg-sky-500/10 hover:text-sky-200' },
+};
+
+const TIME_CHIP_COLORS: Record<string, { active: string; hover: string }> = {
+  Morning: { active: 'border-orange-400 bg-orange-400/20 text-orange-200', hover: 'hover:border-orange-400/60 hover:bg-orange-400/10 hover:text-orange-200' },
+  Day:     { active: 'border-yellow-400 bg-yellow-400/20 text-yellow-200', hover: 'hover:border-yellow-400/60 hover:bg-yellow-400/10 hover:text-yellow-200' },
+  Evening: { active: 'border-red-400 bg-red-400/20 text-red-200',          hover: 'hover:border-red-400/60 hover:bg-red-400/10 hover:text-red-200' },
+  Night:   { active: 'border-indigo-400 bg-indigo-400/20 text-indigo-200', hover: 'hover:border-indigo-400/60 hover:bg-indigo-400/10 hover:text-indigo-200' },
+};
+
+const WEATHER_CHIP_COLORS: Record<string, { active: string; hover: string }> = {
+  Sunny:  { active: 'border-yellow-400 bg-yellow-400/20 text-yellow-200', hover: 'hover:border-yellow-400/60 hover:bg-yellow-400/10 hover:text-yellow-200' },
+  Cloudy: { active: 'border-slate-400 bg-slate-400/20 text-slate-200',    hover: 'hover:border-slate-400/60 hover:bg-slate-400/10 hover:text-slate-200' },
+  Rainy:  { active: 'border-blue-400 bg-blue-400/20 text-blue-200',       hover: 'hover:border-blue-400/60 hover:bg-blue-400/10 hover:text-blue-200' },
+};
+
+const SPECIALTY_COLORS = {
+  active: 'border-teal-500 bg-teal-500/20 text-teal-200',
+  hover:  'hover:border-teal-500/60 hover:bg-teal-500/10 hover:text-teal-200',
+};
+
+function ColorChipButton({
+  label, active, onClick, colors, icon,
+}: { label: string; active: boolean; onClick: () => void; colors: { active: string; hover: string }; icon?: string }) {
+  return (
+    <button
+      onClick={onClick}
+      className={`text-xs px-2.5 py-1 rounded-full border transition-all duration-100 font-medium
+        ${active
+          ? colors.active
+          : `border-gray-600/50 bg-gray-800/50 text-gray-400 ${colors.hover}`
+        }`}
+    >
+      {icon ? `${icon} ${label}` : label}
+    </button>
+  );
+}
+
+function TypeChipButton({
+  type, active, onClick,
+}: { type: string; active: boolean; onClick: () => void }) {
+  const colors = TYPE_CHIP_COLORS[type] ?? { active: 'border-indigo-500 bg-indigo-600/30 text-indigo-200', hover: 'hover:border-gray-500 hover:text-gray-200' };
+  return (
+    <button
+      onClick={onClick}
+      className={`text-xs px-2.5 py-1 rounded-full border transition-all duration-100 font-medium
+        ${active
+          ? colors.active
+          : `border-gray-600/50 bg-gray-800/50 text-gray-400 ${colors.hover}`
+        }`}
+    >
+      {type}
+    </button>
+  );
+}
+
 export function FilterBar({ filters, onChange, onClear, hasActiveFilters }: FilterBarProps) {
   function toggleType(t: PokemonType) {
     const types = filters.types.includes(t)
@@ -113,13 +203,14 @@ export function FilterBar({ filters, onChange, onClear, hasActiveFilters }: Filt
         </label>
         <div className="flex flex-wrap gap-1.5">
           {ALL_RARITIES.map((r) => (
-            <ChipButton
+            <ColorChipButton
               key={r}
+              label={r}
+              icon={RARITY_ICONS[r]}
               active={filters.rarity === r}
               onClick={() => onChange({ ...filters, rarity: filters.rarity === r ? '' : r })}
-            >
-              {RARITY_ICONS[r]} {r}
-            </ChipButton>
+              colors={RARITY_CHIP_COLORS[r] ?? { active: 'border-indigo-500 bg-indigo-600/30 text-indigo-200', hover: 'hover:border-gray-500 hover:text-gray-200' }}
+            />
           ))}
         </div>
       </div>
@@ -131,13 +222,14 @@ export function FilterBar({ filters, onChange, onClear, hasActiveFilters }: Filt
         </label>
         <div className="flex flex-wrap gap-1.5">
           {ALL_HABITATS.map((h) => (
-            <ChipButton
+            <ColorChipButton
               key={h}
+              label={h}
+              icon={HABITAT_ICONS[h]}
               active={filters.idealHabitat === h}
               onClick={() => onChange({ ...filters, idealHabitat: filters.idealHabitat === h ? '' : h })}
-            >
-              {HABITAT_ICONS[h]} {h}
-            </ChipButton>
+              colors={HABITAT_CHIP_COLORS[h] ?? { active: 'border-indigo-500 bg-indigo-600/30 text-indigo-200', hover: 'hover:border-gray-500 hover:text-gray-200' }}
+            />
           ))}
         </div>
       </div>
@@ -149,9 +241,7 @@ export function FilterBar({ filters, onChange, onClear, hasActiveFilters }: Filt
         </label>
         <div className="flex flex-wrap gap-1.5">
           {ALL_TYPES.map((t) => (
-            <ChipButton key={t} active={filters.types.includes(t)} onClick={() => toggleType(t)}>
-              {t}
-            </ChipButton>
+            <TypeChipButton key={t} type={t} active={filters.types.includes(t)} onClick={() => toggleType(t)} />
           ))}
         </div>
       </div>
@@ -163,9 +253,14 @@ export function FilterBar({ filters, onChange, onClear, hasActiveFilters }: Filt
         </label>
         <div className="flex flex-wrap gap-1.5">
           {ALL_TIMES.map((t) => (
-            <ChipButton key={t} active={filters.times.includes(t)} onClick={() => toggleTime(t)}>
-              {TIME_ICONS[t]} {t}
-            </ChipButton>
+            <ColorChipButton
+              key={t}
+              label={t}
+              icon={TIME_ICONS[t]}
+              active={filters.times.includes(t)}
+              onClick={() => toggleTime(t)}
+              colors={TIME_CHIP_COLORS[t] ?? { active: 'border-indigo-500 bg-indigo-600/30 text-indigo-200', hover: 'hover:border-gray-500 hover:text-gray-200' }}
+            />
           ))}
         </div>
       </div>
@@ -177,9 +272,14 @@ export function FilterBar({ filters, onChange, onClear, hasActiveFilters }: Filt
         </label>
         <div className="flex flex-wrap gap-1.5">
           {ALL_WEATHER.map((w) => (
-            <ChipButton key={w} active={filters.weather.includes(w)} onClick={() => toggleWeather(w)}>
-              {WEATHER_ICONS[w]} {w}
-            </ChipButton>
+            <ColorChipButton
+              key={w}
+              label={w}
+              icon={WEATHER_ICONS[w]}
+              active={filters.weather.includes(w)}
+              onClick={() => toggleWeather(w)}
+              colors={WEATHER_CHIP_COLORS[w] ?? { active: 'border-indigo-500 bg-indigo-600/30 text-indigo-200', hover: 'hover:border-gray-500 hover:text-gray-200' }}
+            />
           ))}
         </div>
       </div>
@@ -191,9 +291,13 @@ export function FilterBar({ filters, onChange, onClear, hasActiveFilters }: Filt
         </label>
         <div className="flex flex-wrap gap-1.5">
           {ALL_SPECIALTIES.map((s) => (
-            <ChipButton key={s} active={filters.specialties.includes(s)} onClick={() => toggleSpecialty(s)}>
-              {s}
-            </ChipButton>
+            <ColorChipButton
+              key={s}
+              label={s}
+              active={filters.specialties.includes(s)}
+              onClick={() => toggleSpecialty(s)}
+              colors={SPECIALTY_COLORS}
+            />
           ))}
         </div>
       </div>
