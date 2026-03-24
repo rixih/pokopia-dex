@@ -41,22 +41,6 @@ interface FilterBarProps {
   hasActiveFilters: boolean;
 }
 
-function ChipButton({
-  active, onClick, children,
-}: { active: boolean; onClick: () => void; children: React.ReactNode }) {
-  return (
-    <button
-      onClick={onClick}
-      className={`text-xs px-2.5 py-1 rounded-full border transition-all duration-100 font-medium
-        ${active
-          ? 'border-indigo-500 bg-indigo-600/30 text-indigo-200'
-          : 'border-gray-600/50 bg-gray-800/50 text-gray-400 hover:border-gray-500 hover:text-gray-200'
-        }`}
-    >
-      {children}
-    </button>
-  );
-}
 
 const TYPE_CHIP_COLORS: Record<string, { active: string; hover: string }> = {
   Normal:   { active: 'border-gray-400 bg-gray-400/20 text-gray-200',     hover: 'hover:border-gray-400/60 hover:bg-gray-400/10 hover:text-gray-200' },
