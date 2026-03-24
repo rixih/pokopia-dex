@@ -130,7 +130,7 @@ export function SpecialtyModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
       <div
-        className="relative z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl bg-gray-900 border border-gray-700/60 shadow-2xl"
+        className="relative z-10 w-full max-w-3xl rounded-2xl bg-gray-900 border border-gray-700/60 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -150,8 +150,8 @@ export function SpecialtyModal({
           </div>
         </div>
 
-        {/* Pokémon grid */}
-        <div className="p-6">
+        {/* Pokémon grid — fixed height, scrollable */}
+        <div className="p-6 overflow-y-auto max-h-[26rem]">
           <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
             Pokémon with this specialty — {pokemonList.length}
           </h3>
