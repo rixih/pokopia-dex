@@ -32,7 +32,7 @@ export default function App() {
                   Pokémon Pokopia — Nintendo Switch 2
                 </p>
                 <p className="text-xs text-gray-600 leading-tight hidden sm:block">
-                  Fan-made by Rixih
+                  Fan-made by <span className="text-yellow-400 font-semibold">Rixih</span>
                 </p>
               </div>
             </div>
