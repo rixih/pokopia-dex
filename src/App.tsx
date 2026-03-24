@@ -23,9 +23,14 @@ export default function App() {
         <header className="sticky top-0 z-40 bg-gray-950/90 backdrop-blur-md border-b border-gray-800/60 relative">
           <div className="max-w-screen-2xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-red-700 shadow-lg">
-                <span className="text-white text-sm font-bold">P</span>
-              </div>
+              <svg viewBox="0 0 100 100" className="w-9 h-9" aria-hidden="true">
+                <circle cx="50" cy="50" r="48" fill="#1a1a1a" stroke="#c0392b" strokeWidth="3"/>
+                <path d="M2 50 a48 48 0 0 1 96 0" fill="#c0392b"/>
+                <path d="M2 50 a48 48 0 0 0 96 0" fill="#f0f0f0"/>
+                <line x1="2" y1="50" x2="98" y2="50" stroke="#1a1a1a" strokeWidth="6"/>
+                <circle cx="50" cy="50" r="14" fill="#1a1a1a" stroke="#1a1a1a" strokeWidth="4"/>
+                <circle cx="50" cy="50" r="9" fill="#f0f0f0"/>
+              </svg>
               <div>
                 <h1 className="text-lg font-bold text-white leading-tight">Pokopia Pokédex</h1>
                 <p className="text-xs text-gray-500 leading-tight hidden sm:block">
