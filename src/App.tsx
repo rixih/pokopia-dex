@@ -31,6 +31,9 @@ export default function App() {
                 <p className="text-xs text-gray-500 leading-tight hidden sm:block">
                   Pokémon Pokopia — Nintendo Switch 2
                 </p>
+                <p className="text-xs text-gray-600 leading-tight hidden sm:block">
+                  Fan-made by Rixih
+                </p>
               </div>
             </div>
             <TabNav />
