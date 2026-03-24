@@ -32,15 +32,17 @@ function PokemonSpriteCell({
 }) {
   const [src, setSrc] = useState(getSpriteUrl(pokemon));
   const [errored, setErrored] = useState(false);
+  const habitatStyle = pokemon.idealHabitat ? HABITAT_STYLES[pokemon.idealHabitat] : null;
 
   return (
     <button
       onClick={onClick}
-      className={`group relative flex flex-col items-center gap-1.5 p-3 rounded-xl border transition-all duration-150 cursor-pointer ${
-        isFound
-          ? 'border-emerald-600/60 bg-emerald-950/60 hover:bg-emerald-900/60'
-          : 'border-gray-700/50 bg-gray-800/50 hover:border-indigo-500/50 hover:bg-gray-700/60'
-      }`}
+      className={`group relative flex flex-col items-center gap-1.5 p-3 rounded-xl border transition-all duration-150 cursor-pointer backdrop-blur-sm
+        ${habitatStyle ? habitatStyle.cardBorder : 'border-gray-700/50'}
+        ${habitatStyle ? habitatStyle.bg : 'bg-gray-800/50'}
+        ${habitatStyle ? habitatStyle.topStripe : 'border-t-2 border-gray-700/40'}
+        ${isFound ? 'ring-1 ring-emerald-600/40' : ''}
+        hover:brightness-110 hover:scale-[1.03]`}
     >
       {isFound && (
         <span className="absolute top-1.5 right-1.5 flex items-center justify-center w-4 h-4 rounded-full bg-emerald-500 text-white text-xs leading-none">

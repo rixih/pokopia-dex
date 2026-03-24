@@ -15,6 +15,16 @@ const CATEGORY_ICONS: Record<string, string> = {
   All: '🌍', Bright: '☀️', Warm: '🔥', Humid: '💧', Cool: '❄️', Dry: '🏜️', Dark: '🌙',
 };
 
+const CATEGORY_CHIP_COLORS: Record<string, { active: string; hover: string }> = {
+  All:    { active: 'border-gray-400 bg-gray-400/20 text-gray-200',     hover: 'hover:border-gray-400/60 hover:bg-gray-400/10 hover:text-gray-200' },
+  Bright: { active: 'border-yellow-500 bg-yellow-500/20 text-yellow-200', hover: 'hover:border-yellow-500/60 hover:bg-yellow-500/10 hover:text-yellow-200' },
+  Warm:   { active: 'border-orange-500 bg-orange-500/20 text-orange-200', hover: 'hover:border-orange-500/60 hover:bg-orange-500/10 hover:text-orange-200' },
+  Humid:  { active: 'border-teal-500 bg-teal-500/20 text-teal-200',      hover: 'hover:border-teal-500/60 hover:bg-teal-500/10 hover:text-teal-200' },
+  Cool:   { active: 'border-sky-500 bg-sky-500/20 text-sky-200',         hover: 'hover:border-sky-500/60 hover:bg-sky-500/10 hover:text-sky-200' },
+  Dry:    { active: 'border-amber-600 bg-amber-600/20 text-amber-200',   hover: 'hover:border-amber-600/60 hover:bg-amber-600/10 hover:text-amber-200' },
+  Dark:   { active: 'border-violet-600 bg-violet-600/20 text-violet-200', hover: 'hover:border-violet-600/60 hover:bg-violet-600/10 hover:text-violet-200' },
+};
+
 export function HabitatDex() {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
@@ -57,7 +67,7 @@ export function HabitatDex() {
       <div className="mb-6">
         <h2 className="text-xl font-bold text-white">Habitat Dex</h2>
         <p className="text-sm text-gray-400 mt-1">
-          All {ALL_HABITATS.length} habitats in Pokémon Pokopia — what to build, and which Pokémon each attracts.
+          All {ALL_HABITATS.length} habitats in Pokémon Pokopia, building requirements, and which Pokémon each habitat attracts.
         </p>
       </div>
 
@@ -85,20 +95,24 @@ export function HabitatDex() {
 
       {/* Category chips */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {ALL_CATEGORIES.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-150 ${
-              activeCategory === cat
-                ? 'bg-indigo-600 border-indigo-500 text-white shadow-md shadow-indigo-900/50'
-                : 'bg-gray-800/60 border-gray-700/50 text-gray-400 hover:text-gray-200 hover:border-gray-600'
-            }`}
-          >
-            <span>{CATEGORY_ICONS[cat]}</span>
-            {cat}
-          </button>
-        ))}
+        {ALL_CATEGORIES.map((cat) => {
+          const colors = CATEGORY_CHIP_COLORS[cat];
+          const isActive = activeCategory === cat;
+          return (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-150
+                ${isActive
+                  ? colors.active
+                  : `bg-gray-800/50 border-gray-600/50 text-gray-400 ${colors.hover}`
+                }`}
+            >
+              <span>{CATEGORY_ICONS[cat]}</span>
+              {cat}
+            </button>
+          );
+        })}
       </div>
 
       {/* Results count */}
