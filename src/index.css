@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bright-50: #fffbeb;
+  --color-bright-100: #fef3c7;
+  --color-bright-500: #f59e0b;
+  --color-bright-600: #d97706;
+  --color-bright-900: #78350f;
+
+  --color-warm-50: #fff7ed;
+  --color-warm-100: #ffedd5;
+  --color-warm-500: #f97316;
+  --color-warm-600: #ea580c;
+  --color-warm-900: #7c2d12;
+
+  --color-humid-50: #f0fdfa;
+  --color-humid-100: #ccfbf1;
+  --color-humid-500: #14b8a6;
+  --color-humid-600: #0d9488;
+  --color-humid-900: #134e4a;
+
+  --color-dry-50: #fefce8;
+  --color-dry-100: #fef9c3;
+  --color-dry-500: #ca8a04;
+  --color-dry-600: #a16207;
+  --color-dry-900: #713f12;
+
+  --color-dark-50: #f5f3ff;
+  --color-dark-100: #ede9fe;
+  --color-dark-500: #8b5cf6;
+  --color-dark-600: #7c3aed;
+  --color-dark-900: #2e1065;
+
+  --color-cool-50: #f0f9ff;
+  --color-cool-100: #e0f2fe;
+  --color-cool-500: #0ea5e9;
+  --color-cool-600: #0284c7;
+  --color-cool-900: #0c4a6e;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  @apply bg-gray-950 text-gray-100 min-h-screen;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+
+.pokemon-card-enter {
+  animation: cardIn 0.15s ease-out;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

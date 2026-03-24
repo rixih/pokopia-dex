@@ -1,0 +1,180 @@
+[
+  {
+    "number": "E001",
+    "name": "Hoppip",
+    "types": [
+      "Grass",
+      "Flying"
+    ],
+    "idealHabitat": "Bright",
+    "habitats": [
+      "Yellow Carpet Habitat"
+    ],
+    "habitatItems": [
+      "Dandy Flowers x4"
+    ],
+    "times": [
+      "Morning",
+      "Day",
+      "Evening",
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "Grow"
+    ],
+    "favorites": [
+      "Soft stuff",
+      "Nature",
+      "Nice breezes",
+      "Pretty flowers",
+      "Wobbly stuff"
+    ],
+    "height": "1'4\"",
+    "weight": "1.1 lbs",
+    "areasFound": "Withered Wasteland",
+    "rarity": "Common",
+    "description": "Outside of cold regions, Hoppip can be found practically everywhere. This is because the wind carries this species all over the world.",
+    "flavor": "Sweet",
+    "eventStart": "March 10, 2026",
+    "eventEnd": "March 25, 2026"
+  },
+  {
+    "number": "E002",
+    "name": "Skiploom",
+    "types": [
+      "Grass",
+      "Flying"
+    ],
+    "idealHabitat": "Bright",
+    "habitats": [
+      "Field-Trip Friends Habitat",
+      "Yellow Carpet Habitat"
+    ],
+    "habitatItems": [
+      "Flower Backpack",
+      "Hoppip Water Bottle",
+      "Lunch Box"
+    ],
+    "times": [
+      "Morning",
+      "Day",
+      "Evening",
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "Grow"
+    ],
+    "favorites": [
+      "Soft stuff",
+      "Nature",
+      "Nice breezes",
+      "Pretty flowers",
+      "Spinning stuff"
+    ],
+    "height": "2'0\"",
+    "weight": "2.2 lbs",
+    "areasFound": "Withered Wasteland",
+    "rarity": "Rare",
+    "description": "When the weather grows cold, Skiploom's flower closes and the Pokémon cannot photosynthesize, so it flies away to warmer regions.",
+    "flavor": "Dry",
+    "eventStart": "March 10, 2026",
+    "eventEnd": "March 25, 2026"
+  },
+  {
+    "number": "E004",
+    "name": "Sableye",
+    "types": [
+      "Dark",
+      "Ghost"
+    ],
+    "rarity": "Very Rare",
+    "idealHabitat": "Dark",
+    "habitats": [
+      "Treasure-hunting Set"
+    ],
+    "habitatItems": [],
+    "times": [
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "Search",
+      "Gather"
+    ],
+    "favorites": [
+      "Colorful stuff",
+      "Hard stuff",
+      "Shiny stuff",
+      "Watching stuff"
+    ],
+    "height": "1'8\"",
+    "weight": "24.3 lbs",
+    "areasFound": "Event Exclusive",
+    "description": "It loves shiny things. It grabs all that it finds and decorates its body with them. It will bite anyone who tries to take them.",
+    "eventStart": "",
+    "eventEnd": ""
+  },
+  {
+    "number": "E003",
+    "name": "Jumpluff",
+    "types": [
+      "Grass",
+      "Flying"
+    ],
+    "idealHabitat": "Bright",
+    "habitats": [
+      "Dandelion Lunchtime Habitat",
+      "Yellow Carpet Habitat"
+    ],
+    "habitatItems": [
+      "Dandy Flowers",
+      "Flower Cushion",
+      "Lunch Box",
+      "Flowery Table Setting"
+    ],
+    "times": [
+      "Morning",
+      "Day",
+      "Evening",
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "Grow",
+      "Litter"
+    ],
+    "favorites": [
+      "Soft stuff",
+      "Nature",
+      "Nice breezes",
+      "Pretty flowers",
+      "Round stuff"
+    ],
+    "height": "2'7\"",
+    "weight": "6.6 lbs",
+    "areasFound": "Withered Wasteland",
+    "rarity": "Very Rare",
+    "description": "Jumpluff travels on seasonal winds. Once its cotton spores run out, its journey ends, as does its life.",
+    "flavor": "Sour",
+    "eventStart": "March 10, 2026",
+    "eventEnd": "March 25, 2026"
+  }
+]
