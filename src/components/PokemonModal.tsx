@@ -169,17 +169,17 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
 
       {/* Modal */}
       <div
-        className={`relative z-10 w-full max-w-2xl max-h-[82dvh] sm:max-h-[90vh] overflow-y-auto rounded-2xl bg-gray-900 shadow-2xl border ${typeStyle.cardBorder}`}
+        className={`relative z-10 w-full max-w-2xl max-h-[82dvh] sm:max-h-[90vh] overflow-hidden rounded-2xl bg-gray-900 shadow-2xl border ${typeStyle.cardBorder} flex flex-col`}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Drag handle — mobile only */}
-        <div className="flex justify-center pt-2 pb-0 sm:hidden">
+        {/* Drag handle — mobile only, pinned outside scroll area */}
+        <div className="flex-shrink-0 flex justify-center pt-2 sm:hidden">
           <div className="w-10 h-1 rounded-full bg-gray-600/70" />
         </div>
 
-        {/* Header banner */}
+        {/* Header banner — pinned, never scrolls */}
         <div
-          className={`relative flex flex-row items-center gap-3 p-4 sm:p-6 rounded-t-2xl ${typeStyle.topStripe} ${type2Style ? '' : typeStyle.bg}`}
+          className={`flex-shrink-0 relative flex flex-row items-center gap-3 p-4 sm:p-6 ${typeStyle.topStripe} ${type2Style ? '' : typeStyle.bg}`}
           style={headerBg}
         >
           <button
@@ -257,7 +257,8 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
           </div>
         </div>
 
-        {/* Body */}
+        {/* Body — scrollable */}
+        <div className="overflow-y-auto flex-1 min-h-0">
         <div className="p-4 sm:p-6 flex flex-col gap-5 sm:gap-6">
           {/* Description */}
           {pokemon.description && (
@@ -467,6 +468,8 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
             </section>
           )}
         </div>
+        </div>{/* end body inner */}
+        </div>{/* end body scrollable */}
       </div>
     </div>
 
