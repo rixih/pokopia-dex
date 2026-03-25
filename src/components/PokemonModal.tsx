@@ -467,7 +467,6 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
               </div>
             </section>
           )}
-        </div>
         </div>{/* end body inner */}
         </div>{/* end body scrollable */}
       </div>
