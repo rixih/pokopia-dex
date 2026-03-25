@@ -4,6 +4,7 @@ import { MainDex } from './pages/MainDex';
 import { EventDex } from './pages/EventDex';
 import { HabitatDex } from './pages/HabitatDex';
 import { CraftingDex } from './pages/CraftingDex';
+import { CookingDex } from './pages/CookingDex';
 import { SpecialtiesDex } from './pages/SpecialtiesDex';
 
 export default function App() {
@@ -24,14 +25,22 @@ export default function App() {
         <header className="sticky top-0 z-40 bg-slate-950/85 backdrop-blur-md border-b border-purple-900/40 relative">
           <div className="max-w-screen-2xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <svg viewBox="0 0 100 100" className="w-9 h-9 transition-transform duration-500 hover:rotate-12" aria-hidden="true">
-                <circle cx="50" cy="50" r="48" fill="#1a1a1a" stroke="#c0392b" strokeWidth="3"/>
-                <path d="M2 50 a48 48 0 0 1 96 0" fill="#c0392b"/>
-                <path d="M2 50 a48 48 0 0 0 96 0" fill="#f0f0f0"/>
-                <line x1="2" y1="50" x2="98" y2="50" stroke="#1a1a1a" strokeWidth="6"/>
-                <circle cx="50" cy="50" r="14" fill="#1a1a1a" stroke="#1a1a1a" strokeWidth="4"/>
-                <circle cx="50" cy="50" r="9" fill="#f0f0f0"/>
-              </svg>
+              <a
+                href="https://ko-fi.com/rixih"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Support Rixih on Ko-fi"
+                className="flex-shrink-0"
+              >
+                <svg viewBox="0 0 100 100" className="w-9 h-9 transition-transform duration-500 hover:rotate-12" aria-hidden="true">
+                  <circle cx="50" cy="50" r="48" fill="#1a1a1a" stroke="#c0392b" strokeWidth="3"/>
+                  <path d="M2 50 a48 48 0 0 1 96 0" fill="#c0392b"/>
+                  <path d="M2 50 a48 48 0 0 0 96 0" fill="#f0f0f0"/>
+                  <line x1="2" y1="50" x2="98" y2="50" stroke="#1a1a1a" strokeWidth="6"/>
+                  <circle cx="50" cy="50" r="14" fill="#1a1a1a" stroke="#1a1a1a" strokeWidth="4"/>
+                  <circle cx="50" cy="50" r="9" fill="#f0f0f0"/>
+                </svg>
+              </a>
               <div>
                 <h1 className="text-lg font-bold leading-tight bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">Pokopia Pokédex</h1>
                 <p className="text-xs text-gray-500 leading-tight hidden sm:block">
@@ -53,6 +62,7 @@ export default function App() {
             <Route path="/events" element={<EventDex />} />
             <Route path="/habitats" element={<HabitatDex />} />
             <Route path="/crafting" element={<CraftingDex />} />
+            <Route path="/cooking" element={<CookingDex />} />
             <Route path="/specialties" element={<SpecialtiesDex />} />
           </Routes>
         </main>
