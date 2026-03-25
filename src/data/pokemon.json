@@ -8579,7 +8579,7 @@
     "number": "193P",
     "displayNumber": "193",
     "name": "Chef Dente",
-    "ignSprite": "https://img.pokemondb.net/sprites/home/normal/greedent.png",
+    "ignSprite": "/sprites/chef-dente.png",
     "isUniquePal": true,
     "types": [
       "Normal"
