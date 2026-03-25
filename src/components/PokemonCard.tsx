@@ -101,7 +101,7 @@ export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent 
         <img
           src="/card-border.png"
           aria-hidden="true"
-          className={`absolute top-0 left-0 w-full pointer-events-none mix-blend-screen z-10 ${habitatStyle ? 'opacity-15' : 'opacity-40'}`}
+          className={`absolute top-0 left-0 w-full pointer-events-none mix-blend-screen z-10 opacity-15`}
           style={{ height: 'auto', filter: habitatStyle?.borderFilter ?? 'invert(1) brightness(0.5)' }}
         />
         <PokemonSprite pokemon={pokemon} />
