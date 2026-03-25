@@ -64,7 +64,7 @@ export function HabitatCard({ number, name, category, requirements, pokemon, ima
           {requirements.map((req) => (
             <span
               key={req}
-              className="text-xs bg-gray-900/70 border border-gray-700/60 text-gray-300 px-2 py-0.5 rounded-md"
+              className={`text-xs px-2 py-0.5 rounded-md border ${style.bg} ${style.border} ${style.text}`}
             >
               {req}
             </span>
