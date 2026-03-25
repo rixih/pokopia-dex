@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { Pokemon } from '../types/pokemon';
 import { HABITAT_STYLES, HABITAT_SCENES } from './HabitatBadge';
-import { TypeBadge } from './TypeBadge';
+import { TypeBadge, TYPE_CARD_STYLES } from './TypeBadge';
 import { getSpriteUrl } from '../utils/sprite';
 
 export type HabitatEntry = {
@@ -32,17 +32,22 @@ function PokemonSpriteCell({
 }) {
   const [src, setSrc] = useState(getSpriteUrl(pokemon));
   const [errored, setErrored] = useState(false);
-  const habitatStyle = pokemon.idealHabitat ? HABITAT_STYLES[pokemon.idealHabitat] : null;
+  const typeStyle = TYPE_CARD_STYLES[pokemon.types[0]];
+  const type2Style = pokemon.types[1] ? TYPE_CARD_STYLES[pokemon.types[1]] : null;
+  const spriteBg = type2Style
+    ? { background: `linear-gradient(135deg, rgba(${typeStyle.bgRaw},0.45) 0%, rgba(${typeStyle.bgRaw},0.45) 55%, rgba(${type2Style.bgRaw},0.45) 100%)` }
+    : undefined;
 
   return (
     <button
       onClick={onClick}
       className={`group relative flex flex-col items-center gap-1.5 p-3 rounded-xl border transition-all duration-150 cursor-pointer backdrop-blur-sm
-        ${habitatStyle ? habitatStyle.cardBorder : 'border-gray-700/50'}
-        ${habitatStyle ? habitatStyle.bg : 'bg-gray-800/50'}
-        ${habitatStyle ? habitatStyle.topStripe : 'border-t-2 border-gray-700/40'}
+        ${typeStyle.cardBorder}
+        ${type2Style ? '' : typeStyle.bg}
+        ${typeStyle.topStripe}
         ${isFound ? 'ring-1 ring-emerald-600/40' : ''}
         hover:brightness-110 hover:scale-[1.03]`}
+      style={spriteBg}
     >
       {isFound && (
         <span className="absolute top-1.5 right-1.5 flex items-center justify-center w-4 h-4 rounded-full bg-emerald-500 text-white text-xs leading-none">
