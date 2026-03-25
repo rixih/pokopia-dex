@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { HABITAT_STYLES } from './HabitatBadge';
-import { TypeBadge } from './TypeBadge';
+import { TypeBadge, TYPE_CARD_STYLES } from './TypeBadge';
 import type { Pokemon } from '../types/pokemon';
 
 interface PokemonCardProps {
@@ -64,6 +64,7 @@ function PokemonSprite({ pokemon }: { pokemon: Pokemon }) {
 }
 
 export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent }: PokemonCardProps) {
+  const typeStyle = TYPE_CARD_STYLES[pokemon.types[0]];
   const habitatStyle = pokemon.idealHabitat ? HABITAT_STYLES[pokemon.idealHabitat] : null;
   const rarityStyle = pokemon.rarity ? RARITY_STYLES[pokemon.rarity] : null;
 
@@ -71,12 +72,8 @@ export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent 
     <div
       className={`group relative flex flex-col rounded-2xl border cursor-pointer transition-all duration-200 overflow-hidden pokemon-card-enter backdrop-blur-sm
         ${isFound
-          ? habitatStyle
-            ? `${habitatStyle.cardBorder} ring-1 ring-emerald-600/40 bg-slate-900/60 hover:bg-slate-800/70 ${habitatStyle.hoverShadow}`
-            : 'border-gray-700/40 ring-1 ring-emerald-600/40 bg-slate-900/60 hover:bg-slate-800/70 hover:shadow-emerald-900/30'
-          : habitatStyle
-            ? `${habitatStyle.cardBorder} bg-slate-900/60 hover:bg-slate-800/70 ${habitatStyle.hoverShadow}`
-            : 'border-gray-700/40 bg-slate-900/60 hover:bg-slate-800/70 hover:shadow-slate-900/40'
+          ? `${typeStyle.cardBorder} ring-1 ring-emerald-600/40 bg-slate-900/60 hover:bg-slate-800/70 ${typeStyle.hoverShadow}`
+          : `${typeStyle.cardBorder} bg-slate-900/60 hover:bg-slate-800/70 ${typeStyle.hoverShadow}`
         } hover:-translate-y-0.5 hover:shadow-xl`}
       onClick={onClick}
     >
@@ -94,15 +91,14 @@ export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent 
 
       {/* Sprite area */}
       <div
-        className={`relative flex items-center justify-center pt-6 pb-2 transition-colors overflow-hidden
-          ${habitatStyle ? `${habitatStyle.bg} ${habitatStyle.topStripe}` : 'bg-slate-800/40 border-t-2 border-gray-700/40'}`}
+        className={`relative flex items-center justify-center pt-6 pb-2 transition-colors overflow-hidden ${typeStyle.bg} ${typeStyle.topStripe}`}
       >
         {/* Ornamental border overlay — cropped to sprite area */}
         <img
           src="/card-border.png"
           aria-hidden="true"
-          className={`absolute top-0 left-0 w-full pointer-events-none mix-blend-screen z-10 opacity-15`}
-          style={{ height: 'auto', filter: habitatStyle?.borderFilter ?? 'invert(1) brightness(0.5)' }}
+          className={`absolute top-0 left-0 w-full pointer-events-none mix-blend-screen z-10 opacity-20`}
+          style={{ height: 'auto', filter: typeStyle.borderFilter }}
         />
         <PokemonSprite pokemon={pokemon} />
       </div>
