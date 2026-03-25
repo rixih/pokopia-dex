@@ -206,7 +206,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
                 <h2 className="text-2xl font-bold text-white">{pokemon.name}</h2>
                 {pokemon.isUniquePal && (
                   <span className="text-xs font-bold px-2.5 py-1 rounded-full border bg-violet-900/60 border-violet-600/50 text-violet-300">
-                    ✦ Unique Pal
+                    ✦ NPC
                   </span>
                 )}
                 {pokemon.rarity && (
