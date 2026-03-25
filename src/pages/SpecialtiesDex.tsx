@@ -98,7 +98,7 @@ export function SpecialtiesDex() {
                   key={s.name}
                   onClick={() => setModalSpecialty(s.name)}
                   className={`flex flex-col items-center gap-2 p-3 rounded-xl border transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg backdrop-blur-sm text-center
-                    ${colors.card} hover:shadow-md`}
+                    ${colors.card} ${colors.glow}`}
                 >
                   <span className="text-3xl">{s.icon}</span>
                   <span className="text-xs font-semibold text-gray-100 leading-tight">{s.name}</span>

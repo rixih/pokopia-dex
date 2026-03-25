@@ -1,7 +1,10 @@
 import { useState, useMemo } from 'react';
 import itemsData from '../data/items.json';
 import buildingKitsData from '../data/building-kits.json';
-import type { CraftingItem } from '../types/pokemon';
+import pokemonData from '../data/pokemon.json';
+import eventData from '../data/events.json';
+import type { CraftingItem, Pokemon } from '../types/pokemon';
+import { SpecialtyModal, SPECIALTY_COLORS, DEFAULT_SPECIALTY_COLORS } from '../components/SpecialtyModal';
 
 interface BuildingKit {
   slug: string;
@@ -116,6 +119,17 @@ export function CraftingDex() {
         : b.name.localeCompare(a.name)
     );
   }, [search, category, sortDir, showingKits, showingAll]);
+
+  const specialtyPokemonMap = useMemo(() => {
+    const map = new Map<string, Pokemon[]>();
+    for (const p of [...pokemonData, ...eventData] as Pokemon[]) {
+      for (const s of p.specialties ?? []) {
+        if (!map.has(s)) map.set(s, []);
+        map.get(s)!.push(p);
+      }
+    }
+    return map;
+  }, []);
 
   const totalShowing = filteredItems.length + filteredKits.length;
   const totalAll = items.length + buildingKits.length;
@@ -266,7 +280,7 @@ export function CraftingDex() {
           )}
 
           {selectedKit && (
-            <BuildingKitModal kit={selectedKit} onClose={() => setSelectedKit(null)} />
+            <BuildingKitModal kit={selectedKit} specialtyPokemonMap={specialtyPokemonMap} onClose={() => setSelectedKit(null)} />
           )}
         </div>
       </div>
@@ -389,8 +403,13 @@ function BuildingKitCard({ kit, onClick }: { kit: BuildingKit; onClick: () => vo
 // ---------------------------------------------------------------------------
 // Building Kit Modal
 // ---------------------------------------------------------------------------
-function BuildingKitModal({ kit, onClose }: { kit: BuildingKit; onClose: () => void }) {
+function BuildingKitModal({ kit, onClose, specialtyPokemonMap }: {
+  kit: BuildingKit;
+  onClose: () => void;
+  specialtyPokemonMap: Map<string, Pokemon[]>;
+}) {
   const [imgError, setImgError] = useState(false);
+  const [selectedSpecialty, setSelectedSpecialty] = useState<string | null>(null);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
@@ -418,6 +437,16 @@ function BuildingKitModal({ kit, onClose }: { kit: BuildingKit; onClose: () => v
             )}
           </div>
         </div>
+
+        {selectedSpecialty && (
+          <SpecialtyModal
+            specialtyName={selectedSpecialty}
+            pokemonList={specialtyPokemonMap.get(selectedSpecialty) ?? []}
+            foundSet={new Set()}
+            onPokemonClick={() => setSelectedSpecialty(null)}
+            onClose={() => setSelectedSpecialty(null)}
+          />
+        )}
 
         {/* Stats */}
         <div className="p-5 flex flex-col gap-5 overflow-y-auto max-h-[60vh]">
@@ -455,11 +484,20 @@ function BuildingKitModal({ kit, onClose }: { kit: BuildingKit; onClose: () => v
                 {kit.pokemonRequired.count != null && (
                   <span className="text-sm text-gray-300 font-medium">{kit.pokemonRequired.count} Pokémon with:</span>
                 )}
-                {kit.pokemonRequired.specialties.map(s => (
-                  <span key={s} className="text-xs px-2.5 py-1 rounded-lg border bg-indigo-900/40 border-indigo-700/50 text-indigo-200 font-semibold">
-                    {s}
-                  </span>
-                ))}
+                {kit.pokemonRequired.specialties.map(s => {
+                  const colors = SPECIALTY_COLORS[s] ?? DEFAULT_SPECIALTY_COLORS;
+                  return (
+                    <button
+                      key={s}
+                      onClick={e => { e.stopPropagation(); setSelectedSpecialty(s); }}
+                      className={`text-xs px-2.5 py-1 rounded-lg border font-semibold cursor-pointer
+                        transition-all duration-150 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-lg
+                        ${colors.card} ${colors.glow}`}
+                    >
+                      {s}
+                    </button>
+                  );
+                })}
               </div>
             </section>
           )}
