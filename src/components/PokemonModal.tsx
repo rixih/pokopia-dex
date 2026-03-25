@@ -160,7 +160,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
   return (
     <>
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
       onClick={onClose}
     >
       {/* Backdrop */}
@@ -168,12 +168,12 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
 
       {/* Modal */}
       <div
-        className={`relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-gray-900 shadow-2xl border ${typeStyle.cardBorder}`}
+        className={`relative z-10 w-full max-w-2xl max-h-[92vh] sm:max-h-[90vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl bg-gray-900 shadow-2xl border ${typeStyle.cardBorder}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header banner */}
         <div
-          className={`relative flex flex-col sm:flex-row items-center gap-4 p-6 rounded-t-2xl ${typeStyle.topStripe} ${type2Style ? '' : typeStyle.bg}`}
+          className={`relative flex flex-row items-center gap-3 p-4 sm:p-6 rounded-t-2xl ${typeStyle.topStripe} ${type2Style ? '' : typeStyle.bg}`}
           style={headerBg}
         >
           <button
@@ -184,14 +184,14 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
           </button>
 
           {spriteErrored ? (
-            <div className="w-28 h-28 flex items-center justify-center rounded-full bg-gray-700/50 text-5xl">
+            <div className="w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center rounded-full bg-gray-700/50 text-5xl">
               {pokemon.types[0] === 'Fire' ? '🔥' : pokemon.types[0] === 'Water' ? '💧' : pokemon.types[0] === 'Grass' ? '🌿' : '⚪'}
             </div>
           ) : (
             <img
               src={spriteSrc}
               alt={pokemon.name}
-              className="w-28 h-28 object-contain drop-shadow-2xl"
+              className="w-20 h-20 sm:w-28 sm:h-28 object-contain drop-shadow-2xl flex-shrink-0"
               onError={() => {
                 const fallback = `https://img.pokemondb.net/sprites/home/normal/${formatNameForDb(pokemon.name)}.png`;
                 if (spriteSrc !== fallback) {
@@ -203,11 +203,11 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
             />
           )}
 
-          <div className="flex flex-col gap-2 text-center sm:text-left flex-1">
+          <div className="flex flex-col gap-1.5 text-left flex-1 min-w-0">
             <div>
-              <p className="text-sm text-gray-400 font-mono">#{pokemon.displayNumber ?? pokemon.number}</p>
-              <div className="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
-                <h2 className="text-2xl font-bold text-white">{pokemon.name}</h2>
+              <p className="text-xs text-gray-400 font-mono">#{pokemon.displayNumber ?? pokemon.number}</p>
+              <div className="flex items-center gap-2 flex-wrap justify-start">
+                <h2 className="text-xl sm:text-2xl font-bold text-white leading-tight">{pokemon.name}</h2>
                 {pokemon.isUniquePal && (
                   <span className="text-xs font-bold px-2.5 py-1 rounded-full border bg-violet-900/60 border-violet-600/50 text-violet-300">
                     ✦ NPC
@@ -220,11 +220,11 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
                 )}
               </div>
             </div>
-            <div className="flex flex-wrap gap-1.5 justify-center sm:justify-start">
+            <div className="flex flex-wrap gap-1.5 justify-start">
               {pokemon.types.map((t) => <TypeBadge key={t} type={t} />)}
               {pokemon.idealHabitat && <HabitatBadge habitat={pokemon.idealHabitat} />}
             </div>
-            <div className="flex gap-4 text-sm text-gray-300 justify-center sm:justify-start">
+            <div className="flex gap-4 text-sm text-gray-300 justify-start">
               {pokemon.height && (
                 <span><span className="text-gray-500">Height</span> {pokemon.height}</span>
               )}
@@ -236,7 +236,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
             {/* Found toggle — bottom of header info, inline */}
             <button
               onClick={() => onToggleFound(pokemon.number)}
-              className={`mt-1 self-center sm:self-start flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold border-2 transition-all duration-150
+              className={`mt-1 self-start flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold border-2 transition-all duration-150
                 ${isFound
                   ? 'border-emerald-500 bg-emerald-900/60 text-emerald-300 hover:bg-emerald-900/80'
                   : 'border-gray-600 bg-gray-800/60 text-gray-400 hover:border-indigo-400 hover:bg-indigo-900/40 hover:text-indigo-300'
@@ -252,7 +252,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
         </div>
 
         {/* Body */}
-        <div className="p-6 flex flex-col gap-6">
+        <div className="p-4 sm:p-6 flex flex-col gap-5 sm:gap-6">
           {/* Description */}
           {pokemon.description && (
             <p className={`text-gray-300 text-sm leading-relaxed italic border-l-2 pl-4 ${typeStyle.topStripe.replace('border-t-2', '')}`}>
