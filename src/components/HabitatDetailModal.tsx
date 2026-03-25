@@ -179,7 +179,7 @@ export function HabitatDetailModal({
               {habitat.requirements.map((req) => (
                 <span
                   key={req}
-                  className="text-xs bg-gray-800/70 border border-gray-700/60 text-gray-300 px-3 py-1 rounded-md"
+                  className={`text-xs px-3 py-1 rounded-md border ${style.bg} ${style.border} ${style.text}`}
                 >
                   {req}
                 </span>
