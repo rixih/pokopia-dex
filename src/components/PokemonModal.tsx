@@ -178,7 +178,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
         >
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800/60 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
+            className="absolute top-3 right-3 w-11 h-11 flex items-center justify-center rounded-full bg-gray-800/60 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
           >
             ✕
           </button>
@@ -266,7 +266,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
               <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-3">
                 🏡 Habitats &amp; Build Requirements
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {pokemon.habitats.map((h) => {
                   const entry = HABITATS_MAP.get(h);
                   const catStyle = entry ? (HABITAT_STYLES[entry.category] ?? HABITAT_STYLES['Bright']) : null;
@@ -371,7 +371,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
           </div>
 
           {/* Specialties + Flavor — side by side */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Specialties */}
             {pokemon.specialties.length > 0 && (
               <section>
