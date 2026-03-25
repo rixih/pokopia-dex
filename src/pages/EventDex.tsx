@@ -11,6 +11,7 @@ const EMPTY_FILTERS: FilterState = {
   search: '',
   types: [],
   rarity: '',
+  uniqueOnly: false,
   idealHabitat: '',
   times: [],
   weather: [],
