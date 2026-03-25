@@ -11,10 +11,12 @@ export type Weather = 'Sunny' | 'Cloudy' | 'Rainy';
 
 export interface Pokemon {
   number: string;
+  displayNumber?: string;
   name: string;
   types: PokemonType[];
   rarity: Rarity;
   ignSprite?: string;
+  isUniquePal?: boolean;
   idealHabitat: IdealHabitat;
   habitats: string[];
   habitatItems: string[];
@@ -38,6 +40,7 @@ export interface FilterState {
   search: string;
   types: PokemonType[];
   rarity: Rarity | '';
+  uniqueOnly: boolean;
   idealHabitat: IdealHabitat | '';
   times: TimeOfDay[];
   weather: Weather[];

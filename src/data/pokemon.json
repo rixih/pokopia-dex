@@ -1747,6 +1747,50 @@
     "flavor": "Sour"
   },
   {
+    "number": "041P",
+    "displayNumber": "041",
+    "name": "Professor Tangrowth",
+    "ignSprite": "https://www.serebii.net/pokemonpokopia/pokemon/465-professortangrowth.png",
+    "isUniquePal": true,
+    "types": [
+      "Grass"
+    ],
+    "rarity": "Common",
+    "idealHabitat": "Humid",
+    "habitats": [
+      "Professor's treasure trove"
+    ],
+    "habitatItems": [
+      "1 bed (any)",
+      "4 lost relics (large)"
+    ],
+    "times": [
+      "Morning",
+      "Day",
+      "Evening",
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "Appraise"
+    ],
+    "favorites": [
+      "Nature",
+      "Complicated stuff",
+      "Letters/words",
+      "Strange stuff",
+      "Group activities"
+    ],
+    "height": "6'7\"",
+    "weight": "283.5 lbs",
+    "description": "A special Tangrowth who once lived with a human professor, distinguished by the pair of glasses on its chest. It guides newcomers around the island.",
+    "flavor": "Dry"
+  },
+  {
     "number": "041",
     "name": "Tangrowth",
     "types": [
@@ -3351,6 +3395,51 @@
     "flavor": "Sweet"
   },
   {
+    "number": "079P",
+    "displayNumber": "079",
+    "name": "Peakychu",
+    "ignSprite": "https://www.serebii.net/pokemonpokopia/pokemon/025-peakychu.png",
+    "isUniquePal": true,
+    "types": [
+      "Electric"
+    ],
+    "rarity": "Rare",
+    "idealHabitat": "Bright",
+    "habitats": [
+      "Full recovery"
+    ],
+    "habitatItems": [
+      "1 plain chest",
+      "1 first aid kit",
+      "1 bed (any)"
+    ],
+    "times": [
+      "Morning",
+      "Day",
+      "Evening",
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "Illuminate"
+    ],
+    "favorites": [
+      "Electronics",
+      "Glass stuff",
+      "Cute stuff",
+      "Healing",
+      "Letters/words"
+    ],
+    "height": "1'4\"",
+    "weight": "13.2 lbs",
+    "description": "An unusually pale Pikachu with the ability to illuminate the surrounding area. Its radiant light is a beacon of hope in dark times.",
+    "flavor": "Sweet"
+  },
+  {
     "number": "079",
     "name": "Pikachu",
     "types": [
@@ -4615,6 +4704,49 @@
     "flavor": "Dry"
   },
   {
+    "number": "108P",
+    "displayNumber": "108",
+    "name": "Mosslax",
+    "ignSprite": "https://www.serebii.net/pokemonpokopia/pokemon/143-mosslax.png",
+    "isUniquePal": true,
+    "types": [
+      "Normal"
+    ],
+    "rarity": "Common",
+    "idealHabitat": "Bright",
+    "habitats": [
+      "Gourmet's altar"
+    ],
+    "habitatItems": [
+      "1 offering dish"
+    ],
+    "times": [
+      "Morning",
+      "Day",
+      "Evening",
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "Eat"
+    ],
+    "favorites": [
+      "Soft stuff",
+      "Fabric",
+      "Looks like food",
+      "Watching stuff",
+      "Strange stuff"
+    ],
+    "height": "6'11\"",
+    "weight": "1014.1 lbs",
+    "description": "A moss-covered Snorlax with a passionate love of food. Offering it tasty morsels on an offering dish may reward you with powerful buffs.",
+    "flavor": "Spicy"
+  },
+  {
     "number": "108",
     "name": "Snorlax",
     "types": [
@@ -5175,6 +5307,50 @@
     "height": "3'11\"",
     "weight": "127.9 lbs",
     "description": "Once it becomes an adult, it has a compulsion to mark its territory using a painter's mark.",
+    "flavor": "Dry"
+  },
+  {
+    "number": "120P",
+    "displayNumber": "120",
+    "name": "Smearguru",
+    "ignSprite": "https://www.serebii.net/pokemonpokopia/pokemon/235-smearguru.png",
+    "isUniquePal": true,
+    "types": [
+      "Normal"
+    ],
+    "rarity": "Common",
+    "idealHabitat": "Bright",
+    "habitats": [
+      "Tiny atelier"
+    ],
+    "habitatItems": [
+      "1 seat (any)",
+      "1 canvas"
+    ],
+    "times": [
+      "Morning",
+      "Day",
+      "Evening",
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "Paint"
+    ],
+    "favorites": [
+      "Soft stuff",
+      "Fabric",
+      "Strange stuff",
+      "Colourful stuff",
+      "Shiny stuff"
+    ],
+    "height": "3'11\"",
+    "weight": "127.9 lbs",
+    "description": "An artistic Smeargle who has mastered the use of paint. It can customize eligible furniture and items, changing their colors and patterns.",
     "flavor": "Dry"
   },
   {
@@ -7893,6 +8069,52 @@
     "flavor": "Dry"
   },
   {
+    "number": "182P",
+    "displayNumber": "182",
+    "name": "Stereo Rotom",
+    "ignSprite": "https://www.serebii.net/pokemonpokopia/pokemon/479-stereorotom.png",
+    "isUniquePal": true,
+    "types": [
+      "Electric",
+      "Normal"
+    ],
+    "rarity": "Rare",
+    "idealHabitat": "Bright",
+    "habitats": [
+      "Music and magazines"
+    ],
+    "habitatItems": [
+      "1 CD rack",
+      "1 magazine rack",
+      "1 CD player"
+    ],
+    "times": [
+      "Morning",
+      "Day",
+      "Evening",
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "DJ"
+    ],
+    "favorites": [
+      "Shiny stuff",
+      "Glass stuff",
+      "Noisy stuff",
+      "Group activities",
+      "Blocky stuff"
+    ],
+    "height": "1'0\"",
+    "weight": "0.7 lbs",
+    "description": "A unique Rotom that has taken over a stereo system. As the island's resident DJ, it can play CDs to change the background music throughout the world.",
+    "flavor": "Bitter"
+  },
+  {
     "number": "183",
     "name": "Rotom",
     "types": [
@@ -8351,6 +8573,54 @@
     "height": "2'0\"",
     "weight": "13.2 lbs",
     "description": "It stashes berries in its tail. Berries fall out of its overstuffed tail as it wanders around.",
+    "flavor": "Sweet"
+  },
+  {
+    "number": "193P",
+    "displayNumber": "193",
+    "name": "Chef Dente",
+    "ignSprite": "https://img.pokemondb.net/sprites/home/normal/greedent.png",
+    "isUniquePal": true,
+    "types": [
+      "Normal"
+    ],
+    "rarity": "Common",
+    "idealHabitat": "Warm",
+    "habitats": [
+      "Chef's kitchen"
+    ],
+    "habitatItems": [
+      "1 plain table",
+      "1 modern sink",
+      "1 cooking stove",
+      "1 cutting board",
+      "1 stylish cooking pot",
+      "1 plated food"
+    ],
+    "times": [
+      "Morning",
+      "Day",
+      "Evening",
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "Party"
+    ],
+    "favorites": [
+      "Soft stuff",
+      "Metal stuff",
+      "Group activities",
+      "Looks like food",
+      "Luxury"
+    ],
+    "height": "2'0\"",
+    "weight": "13.2 lbs",
+    "description": "A skilled Greedent who has transformed its berry-hoarding nature into culinary mastery. It teaches cooking and helps prepare food for parties.",
     "flavor": "Sweet"
   },
   {
@@ -11697,6 +11967,53 @@
     "height": "2'4\"",
     "weight": "250.0 lbs",
     "description": "It is an extremely cunning Pokémon. It knocks rocks and debris into the sky with its 220-pound hammer, aiming to strike Corviknight.",
+    "flavor": "Spicy"
+  },
+  {
+    "number": "271P",
+    "displayNumber": "271",
+    "name": "Tinkmaster",
+    "ignSprite": "https://img.pokemondb.net/sprites/home/normal/tinkaton.png",
+    "isUniquePal": true,
+    "types": [
+      "Fairy",
+      "Steel"
+    ],
+    "rarity": "Common",
+    "idealHabitat": "Bright",
+    "habitats": [
+      "Oversized dumping ground"
+    ],
+    "habitatItems": [
+      "1 tires",
+      "3 iron beams or columns",
+      "1 waste bin (any)",
+      "1 microwave oven"
+    ],
+    "times": [
+      "Morning",
+      "Day",
+      "Evening",
+      "Night"
+    ],
+    "weather": [
+      "Sunny",
+      "Cloudy",
+      "Rainy"
+    ],
+    "specialties": [
+      "Engineer"
+    ],
+    "favorites": [
+      "Cute stuff",
+      "Metal stuff",
+      "Construction",
+      "Blocky stuff",
+      "Exercise"
+    ],
+    "height": "2'4\"",
+    "weight": "250.0 lbs",
+    "description": "A masterful Tinkaton who leads other Pokémon in large construction and rebuilding projects across the island, using expert engineering skills.",
     "flavor": "Spicy"
   },
   {

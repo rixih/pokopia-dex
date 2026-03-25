@@ -201,9 +201,14 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
 
           <div className="flex flex-col gap-2 text-center sm:text-left flex-1">
             <div>
-              <p className="text-sm text-gray-400 font-mono">#{pokemon.number}</p>
+              <p className="text-sm text-gray-400 font-mono">#{pokemon.displayNumber ?? pokemon.number}</p>
               <div className="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
                 <h2 className="text-2xl font-bold text-white">{pokemon.name}</h2>
+                {pokemon.isUniquePal && (
+                  <span className="text-xs font-bold px-2.5 py-1 rounded-full border bg-violet-900/60 border-violet-600/50 text-violet-300">
+                    ✦ Unique Pal
+                  </span>
+                )}
                 {pokemon.rarity && (
                   <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${RARITY_BADGE[pokemon.rarity] ?? 'bg-gray-800/60 border-gray-600/50 text-gray-300'}`}>
                     {pokemon.rarity}

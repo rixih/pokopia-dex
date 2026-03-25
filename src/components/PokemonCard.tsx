@@ -86,6 +86,11 @@ export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent 
           ⭐ Event
         </div>
       )}
+      {pokemon.isUniquePal && (
+        <div className="absolute top-2 left-2 z-30 flex items-center gap-1 bg-violet-500/90 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+          ✦ NPC
+        </div>
+      )}
 
       {isFound && (
         <div className="absolute top-2 right-2 z-30">
@@ -112,7 +117,7 @@ export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent 
       <div className="flex flex-col gap-2 p-3 flex-1">
         <div className="flex items-start justify-between gap-1">
           <div>
-            <p className="text-xs text-gray-500 font-mono">#{pokemon.number}</p>
+            <p className="text-xs text-gray-500 font-mono">#{pokemon.displayNumber ?? pokemon.number}</p>
             <h3 className="font-semibold text-gray-100 text-sm leading-tight">{pokemon.name}</h3>
           </div>
         </div>

@@ -196,6 +196,13 @@ export function FilterBar({ filters, onChange, onClear, hasActiveFilters }: Filt
               colors={RARITY_CHIP_COLORS[r] ?? { active: 'border-indigo-500 bg-indigo-600/30 text-indigo-200', hover: 'hover:border-gray-500 hover:text-gray-200' }}
             />
           ))}
+          <ColorChipButton
+            label="NPC"
+            icon="✦"
+            active={filters.uniqueOnly}
+            onClick={() => onChange({ ...filters, uniqueOnly: !filters.uniqueOnly })}
+            colors={{ active: 'border-violet-500 bg-violet-500/20 text-violet-200', hover: 'hover:border-violet-500/60 hover:bg-violet-500/10 hover:text-violet-200' }}
+          />
         </div>
       </div>
 

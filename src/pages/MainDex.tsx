@@ -11,6 +11,7 @@ const EMPTY_FILTERS: FilterState = {
   search: '',
   types: [],
   rarity: '',
+  uniqueOnly: false,
   idealHabitat: '',
   times: [],
   weather: [],
@@ -22,6 +23,7 @@ function hasActiveFilters(f: FilterState) {
     f.search !== '' ||
     f.types.length > 0 ||
     f.rarity !== '' ||
+    f.uniqueOnly ||
     f.idealHabitat !== '' ||
     f.times.length > 0 ||
     f.weather.length > 0 ||
@@ -34,6 +36,7 @@ function applyFilters(list: Pokemon[], f: FilterState): Pokemon[] {
     if (f.search && !p.name.toLowerCase().includes(f.search.toLowerCase())) return false;
     if (f.types.length > 0 && !f.types.some((t) => p.types.includes(t))) return false;
     if (f.rarity && p.rarity !== f.rarity) return false;
+    if (f.uniqueOnly && !p.isUniquePal) return false;
     if (f.idealHabitat && p.idealHabitat !== f.idealHabitat) return false;
     if (f.times.length > 0 && !f.times.some((t) => p.times.includes(t))) return false;
     if (f.weather.length > 0 && !f.weather.some((w) => p.weather.includes(w))) return false;
@@ -112,6 +115,12 @@ export function MainDex() {
               <span className="flex items-center gap-1 text-xs bg-gray-800 border border-gray-600 text-gray-300 px-2 py-1 rounded-full">
                 {filters.rarity}
                 <button onClick={() => setFilters({ ...filters, rarity: '' })} className="text-gray-500 hover:text-white ml-1">✕</button>
+              </span>
+            )}
+            {filters.uniqueOnly && (
+              <span className="flex items-center gap-1 text-xs bg-violet-900/60 border border-violet-700/50 text-violet-300 px-2 py-1 rounded-full">
+                ✦ NPC
+                <button onClick={() => setFilters({ ...filters, uniqueOnly: false })} className="text-violet-500 hover:text-white ml-1">✕</button>
               </span>
             )}
             {filters.idealHabitat && (
