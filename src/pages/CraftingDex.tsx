@@ -205,11 +205,7 @@ export function CraftingDex() {
       <div>
         <h2 className="text-2xl font-bold text-white mb-1">Crafting &amp; Building</h2>
         <p className="text-gray-400 text-sm">
-          {items.length} craftable items and {buildingKits.length} building kits.{' '}
-          Data from{' '}
-          <a href="https://www.serebii.net/pokemonpokopia/crafting.shtml" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
-            Serebii
-          </a>.
+          {items.length} craftable items and {buildingKits.length} building kits.
         </p>
       </div>
 

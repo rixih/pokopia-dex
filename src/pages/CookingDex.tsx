@@ -1,4 +1,5 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { RECIPES, COOKING_EQUIPMENT, type CookingRecipe, type RecipeType, type Flavor } from '../data/cooking';
 
 // ─── Style maps ────────────────────────────────────────────────────────────────
@@ -47,36 +48,45 @@ function ingredientImageUrl(name: string): string {
   return `https://www.serebii.net/pokemonpokopia/items/${slug}.png`;
 }
 
-// ─── Equipment tooltip ─────────────────────────────────────────────────────────
+// ─── Equipment tooltip — portal-rendered to escape card overflow:hidden ────────
 function EquipmentChip({ name }: { name: string }) {
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ top: 0, left: 0 });
+  const btnRef = useRef<HTMLButtonElement>(null);
   const eq = COOKING_EQUIPMENT[name];
+
+  const show = () => {
+    if (btnRef.current) {
+      const r = btnRef.current.getBoundingClientRect();
+      setPos({ top: r.top, left: r.left + r.width / 2 });
+    }
+    setOpen(true);
+  };
 
   useEffect(() => {
     function handler(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      if (btnRef.current && !btnRef.current.contains(e.target as Node)) setOpen(false);
     }
     if (open) document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, [open]);
 
   return (
-    <div ref={ref} className="relative inline-block">
+    <span className="relative inline-block">
       <button
-        onClick={() => setOpen(o => !o)}
-        onMouseEnter={() => setOpen(true)}
+        ref={btnRef}
+        onClick={show}
+        onMouseEnter={show}
         onMouseLeave={() => setOpen(false)}
-        className="text-xs px-2 py-0.5 rounded-md border bg-slate-800/80 border-slate-600/50 text-slate-200 hover:border-indigo-500/60 hover:text-indigo-200 transition-colors cursor-pointer underline decoration-dotted underline-offset-2"
+        className="text-xs px-2 py-0.5 rounded-md border bg-slate-800/80 border-slate-600/50 text-slate-200 hover:border-indigo-500/60 hover:text-indigo-200 transition-colors cursor-pointer"
       >
         {name}
       </button>
 
-      {open && eq && (
+      {open && eq && createPortal(
         <div
-          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 w-52 bg-gray-900 border border-gray-700/60 rounded-xl shadow-2xl p-3"
-          onMouseEnter={() => setOpen(true)}
-          onMouseLeave={() => setOpen(false)}
+          className="fixed z-[9999] w-52 bg-gray-900 border border-gray-700/60 rounded-xl shadow-2xl p-3 pointer-events-none"
+          style={{ top: pos.top - 8, left: pos.left, transform: 'translate(-50%, -100%)' }}
         >
           <div className="flex items-center gap-2 mb-2">
             <img src={eq.imageUrl} alt={eq.name} className="w-10 h-10 object-contain" />
@@ -95,11 +105,12 @@ function EquipmentChip({ name }: { name: string }) {
               ))}
             </div>
           </div>
-          {/* Tooltip arrow */}
-          <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-700/60" />
-        </div>
+          {/* Arrow */}
+          <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-700/60" />
+        </div>,
+        document.body
       )}
-    </div>
+    </span>
   );
 }
 
@@ -315,14 +326,7 @@ export function CookingDex() {
       <div>
         <h2 className="text-2xl font-bold text-white mb-1">Cooking Recipes</h2>
         <p className="text-gray-400 text-sm">
-          All {RECIPES.length} recipes across {ALL_TYPES.length} types. Hover any equipment name to see crafting requirements.{' '}
-          Data from{' '}
-          <a href="https://www.serebii.net/pokemonpokopia/cooking.shtml" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
-            Serebii
-          </a>{' '}and{' '}
-          <a href="https://www.nintendolife.com/guides/pokemon-pokopia-cooking-guide-all-food-recipes-flavours-and-effects" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
-            Nintendo Life
-          </a>.
+          All {RECIPES.length} recipes across {ALL_TYPES.length} types. Hover any equipment name to see crafting requirements.
         </p>
       </div>
 
