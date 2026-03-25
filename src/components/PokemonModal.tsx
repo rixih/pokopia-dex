@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Pokemon } from '../types/pokemon';
-import { TypeBadge } from './TypeBadge';
+import { TypeBadge, TYPE_CARD_STYLES } from './TypeBadge';
 import { HabitatBadge, HABITAT_STYLES, HABITAT_SCENES } from './HabitatBadge';
 import habitatsData from '../data/habitats.json';
 import pokemonData from '../data/pokemon.json';
@@ -151,7 +151,11 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  const habitatStyle = pokemon.idealHabitat ? HABITAT_STYLES[pokemon.idealHabitat] : null;
+  const typeStyle = TYPE_CARD_STYLES[pokemon.types[0]];
+  const type2Style = pokemon.types[1] ? TYPE_CARD_STYLES[pokemon.types[1]] : null;
+  const headerBg = type2Style
+    ? { background: `linear-gradient(135deg, rgba(${typeStyle.bgRaw},0.5) 0%, rgba(${typeStyle.bgRaw},0.5) 55%, rgba(${type2Style.bgRaw},0.5) 100%)` }
+    : undefined;
 
   return (
     <>
@@ -164,13 +168,13 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
 
       {/* Modal */}
       <div
-        className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-gray-900 border border-gray-700/60 shadow-2xl"
+        className={`relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-gray-900 shadow-2xl border ${typeStyle.cardBorder}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header banner */}
         <div
-          className={`relative flex flex-col sm:flex-row items-center gap-4 p-6 rounded-t-2xl
-            ${habitatStyle ? habitatStyle.bg : 'bg-gray-800/60'}`}
+          className={`relative flex flex-col sm:flex-row items-center gap-4 p-6 rounded-t-2xl ${typeStyle.topStripe} ${type2Style ? '' : typeStyle.bg}`}
+          style={headerBg}
         >
           <button
             onClick={onClose}
@@ -251,7 +255,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
         <div className="p-6 flex flex-col gap-6">
           {/* Description */}
           {pokemon.description && (
-            <p className="text-gray-300 text-sm leading-relaxed italic border-l-2 border-gray-600 pl-4">
+            <p className={`text-gray-300 text-sm leading-relaxed italic border-l-2 pl-4 ${typeStyle.topStripe.replace('border-t-2', '')}`}>
               {pokemon.description}
             </p>
           )}
@@ -415,7 +419,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
               </h3>
               <div className="flex flex-wrap gap-2">
                 {pokemon.favorites.map((f) => (
-                  <span key={f} className="flex items-center gap-1.5 text-xs bg-pink-950/40 border border-pink-800/30 text-pink-200 px-3 py-1.5 rounded-full">
+                  <span key={f} className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border ${typeStyle.bg} ${typeStyle.cardBorder} text-gray-200`}>
                     <span>{FAVORITE_ICONS[f] ?? '💛'}</span>
                     {f}
                   </span>
