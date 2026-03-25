@@ -169,9 +169,14 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
 
       {/* Modal */}
       <div
-        className={`relative z-10 w-full max-w-2xl max-h-[92vh] sm:max-h-[90vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl bg-gray-900 shadow-2xl border ${typeStyle.cardBorder}`}
+        className={`relative z-10 w-full max-w-2xl max-h-[82dvh] sm:max-h-[90vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl bg-gray-900 shadow-2xl border ${typeStyle.cardBorder}`}
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Drag handle — mobile only */}
+        <div className="flex justify-center pt-2 pb-0 sm:hidden">
+          <div className="w-10 h-1 rounded-full bg-gray-600/70" />
+        </div>
+
         {/* Header banner */}
         <div
           className={`relative flex flex-row items-center gap-3 p-4 sm:p-6 rounded-t-2xl ${typeStyle.topStripe} ${type2Style ? '' : typeStyle.bg}`}
