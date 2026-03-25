@@ -323,7 +323,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
                             {entry.requirements.map((req) => (
                               <span
                                 key={req}
-                                className="text-xs bg-gray-900/60 border border-gray-700/50 text-gray-300 px-1.5 py-0.5 rounded-md leading-tight"
+                                className={`text-xs px-1.5 py-0.5 rounded-md leading-tight border ${catStyle ? `${catStyle.bg} ${catStyle.border} ${catStyle.text}` : 'bg-gray-900/60 border-gray-700/50 text-gray-300'}`}
                               >
                                 {req}
                               </span>
