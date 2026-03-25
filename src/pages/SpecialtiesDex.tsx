@@ -57,7 +57,7 @@ export function SpecialtiesDex() {
       <div>
         <h2 className="text-xl font-bold text-white">Specialties</h2>
         <p className="text-sm text-gray-400 mt-1">
-          All {SPECIALTIES.length} specialties in Pokémon Pokopia — what each does and which Pokémon perform it.
+          All {SPECIALTIES.length} specialties in Pokémon Pokopia, what each does and which Pokémon perform it.
         </p>
       </div>
 
