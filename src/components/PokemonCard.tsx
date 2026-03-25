@@ -65,6 +65,10 @@ function PokemonSprite({ pokemon }: { pokemon: Pokemon }) {
 
 export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent }: PokemonCardProps) {
   const typeStyle = TYPE_CARD_STYLES[pokemon.types[0]];
+  const type2Style = pokemon.types[1] ? TYPE_CARD_STYLES[pokemon.types[1]] : null;
+  const spriteBg = type2Style
+    ? { background: `linear-gradient(135deg, rgba(${typeStyle.bgRaw},0.45) 0%, rgba(${typeStyle.bgRaw},0.45) 55%, rgba(${type2Style.bgRaw},0.45) 100%)` }
+    : undefined;
   const habitatStyle = pokemon.idealHabitat ? HABITAT_STYLES[pokemon.idealHabitat] : null;
   const rarityStyle = pokemon.rarity ? RARITY_STYLES[pokemon.rarity] : null;
 
@@ -91,7 +95,8 @@ export function PokemonCard({ pokemon, isFound, onToggleFound, onClick, isEvent 
 
       {/* Sprite area */}
       <div
-        className={`relative flex items-center justify-center pt-6 pb-2 transition-colors overflow-hidden ${typeStyle.bg} ${typeStyle.topStripe}`}
+        className={`relative flex items-center justify-center pt-6 pb-2 transition-colors overflow-hidden ${type2Style ? '' : typeStyle.bg} ${typeStyle.topStripe}`}
+        style={spriteBg}
       >
         {/* Ornamental border overlay — cropped to sprite area */}
         <img
