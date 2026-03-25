@@ -161,7 +161,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
   return createPortal(
     <>
     <div
-      className="fixed inset-0 z-[200] flex items-end sm:items-center justify-center p-0 sm:p-4"
+      className="fixed inset-0 z-[200] flex items-end sm:items-center justify-center pb-4 sm:pb-0 sm:p-4"
       onClick={onClose}
     >
       {/* Backdrop */}
@@ -169,7 +169,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
 
       {/* Modal */}
       <div
-        className={`relative z-10 w-full max-w-2xl max-h-[82dvh] sm:max-h-[90vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl bg-gray-900 shadow-2xl border ${typeStyle.cardBorder}`}
+        className={`relative z-10 w-full max-w-2xl max-h-[82dvh] sm:max-h-[90vh] overflow-y-auto rounded-2xl bg-gray-900 shadow-2xl border ${typeStyle.cardBorder}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Drag handle — mobile only */}
