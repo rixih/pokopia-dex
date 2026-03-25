@@ -70,7 +70,7 @@ export const HABITAT_STYLES: Record<string, { bg: string; text: string; border: 
     cardBorder: 'border-orange-800/50',
     topStripe: 'border-t-2 border-orange-500/70',
     hoverShadow: 'hover:shadow-orange-900/40',
-    borderFilter: 'invert(1) sepia(1) hue-rotate(8deg) saturate(7) brightness(1.1)',
+    borderFilter: 'invert(1) sepia(1) hue-rotate(345deg) saturate(8) brightness(1.1)',
     icon: '🔥',
     label: 'Warm',
   },
