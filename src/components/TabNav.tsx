@@ -46,7 +46,7 @@ const TABS = [
   { to: '/specialties', label: 'Specialties', renderIcon: () => <span>⚡</span> },
   { to: '/habitats', label: 'Habitat Dex', renderIcon: () => <span>🏡</span> },
   { to: '/crafting', label: 'Crafting', renderIcon: () => <span>🔨</span> },
-  { to: '/cooking', label: 'Cooking', renderIcon: () => <span>👨‍🍳</span> },
+  { to: '/cooking', label: 'Cooking', renderIcon: () => <img src="/tab-cooking.png" alt="" className="w-6 h-6 object-contain" /> },
 ];
 
 export function TabNav() {
