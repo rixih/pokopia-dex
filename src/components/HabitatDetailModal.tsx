@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { Pokemon } from '../types/pokemon';
 import { HABITAT_STYLES, HABITAT_SCENES } from './HabitatBadge';
 import { TypeBadge, TYPE_CARD_STYLES } from './TypeBadge';
@@ -110,9 +111,9 @@ export function HabitatDetailModal({
     .map((name) => pokemonMap.get(name))
     .filter((p): p is Pokemon => p !== undefined);
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
       onClick={onClose}
     >
       {/* Backdrop */}
@@ -213,6 +214,7 @@ export function HabitatDetailModal({
 
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

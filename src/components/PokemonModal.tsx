@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { Pokemon } from '../types/pokemon';
 import { TypeBadge, TYPE_CARD_STYLES } from './TypeBadge';
 import { HabitatBadge, HABITAT_STYLES, HABITAT_SCENES } from './HabitatBadge';
@@ -157,10 +158,10 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
     ? { background: `linear-gradient(135deg, rgba(${typeStyle.bgRaw},0.5) 0%, rgba(${typeStyle.bgRaw},0.5) 55%, rgba(${type2Style.bgRaw},0.5) 100%)` }
     : undefined;
 
-  return (
+  return createPortal(
     <>
     <div
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
+      className="fixed inset-0 z-[200] flex items-end sm:items-center justify-center p-0 sm:p-4"
       onClick={onClose}
     >
       {/* Backdrop */}
@@ -491,6 +492,7 @@ export function PokemonModal({ pokemon, isFound, onToggleFound, onClose, foundSe
         onClose={() => setSelectedSpecialty(null)}
       />
     )}
-    </>
+    </>,
+    document.body
   );
 }

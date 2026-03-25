@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { Pokemon } from '../types/pokemon';
 import { SPECIALTY_MAP } from '../data/specialties';
 import { TypeBadge, TYPE_CARD_STYLES } from './TypeBadge';
@@ -130,8 +131,8 @@ export function SpecialtyModal({
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
+  return createPortal(
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
       <div
         className="relative z-10 w-full max-w-3xl rounded-2xl bg-gray-900 border border-gray-700/60 shadow-2xl"
@@ -175,6 +176,7 @@ export function SpecialtyModal({
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
