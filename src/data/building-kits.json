@@ -1,0 +1,1700 @@
+[
+  {
+    "slug": "leafdenkit",
+    "name": "Leaf den kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 1,
+    "timeRequired": "15 minutes",
+    "size": {
+      "width": 2,
+      "depth": 2,
+      "height": 1
+    },
+    "materials": [
+      {
+        "item": "Sturdy Stick",
+        "quantity": 3
+      },
+      {
+        "item": "Leaf",
+        "quantity": 3
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/leafdenkit.png"
+  },
+  {
+    "slug": "leafhutkit",
+    "name": "Leaf hut kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 1,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 3,
+      "depth": 3,
+      "height": 2
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 15
+      },
+      {
+        "item": "Leaf",
+        "quantity": 15
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Chop"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/leafhutkit.png"
+  },
+  {
+    "slug": "leafcottagekit",
+    "name": "Leaf cottage kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 2,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 5,
+      "depth": 4,
+      "height": 2
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 20
+      },
+      {
+        "item": "Leaf",
+        "quantity": 20
+      },
+      {
+        "item": "Stone",
+        "quantity": 20
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Fly",
+        "Chop"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/leafcottagekit.png"
+  },
+  {
+    "slug": "leafhousekit",
+    "name": "Leaf house kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 2,
+    "liveablePokemon": 4,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 8,
+      "depth": 6,
+      "height": 6
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 25
+      },
+      {
+        "item": "Leaf",
+        "quantity": 25
+      },
+      {
+        "item": "Stone",
+        "quantity": 25
+      },
+      {
+        "item": "Vine Rope",
+        "quantity": 25
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Fly",
+        "Grow",
+        "Chop"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/leafhousekit.png"
+  },
+  {
+    "slug": "sanddenkit",
+    "name": "Sand den kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 1,
+    "timeRequired": "15 minutes",
+    "size": {
+      "width": 2,
+      "depth": 2,
+      "height": 1
+    },
+    "materials": [
+      {
+        "item": "Seashell",
+        "quantity": 5
+      },
+      {
+        "item": "Stone",
+        "quantity": 5
+      },
+      {
+        "item": "Beach Sand",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/sanddenkit.png"
+  },
+  {
+    "slug": "sandhutkit",
+    "name": "Sand hut kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 1,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 3,
+      "depth": 3,
+      "height": 2
+    },
+    "materials": [
+      {
+        "item": "Seashell",
+        "quantity": 10
+      },
+      {
+        "item": "Stone",
+        "quantity": 10
+      },
+      {
+        "item": "Beach Sand",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Water"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/sandhutkit.png"
+  },
+  {
+    "slug": "sandcottagekit",
+    "name": "Sand cottage kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 2,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 5,
+      "depth": 4,
+      "height": 2
+    },
+    "materials": [
+      {
+        "item": "Stone",
+        "quantity": 20
+      },
+      {
+        "item": "Brick",
+        "quantity": 20
+      },
+      {
+        "item": "Beach Sand",
+        "quantity": 20
+      },
+      {
+        "item": "Seashell",
+        "quantity": 20
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Water",
+        "Generate"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/sandcottagekit.png"
+  },
+  {
+    "slug": "sandhousekit",
+    "name": "Sand house kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 2,
+    "liveablePokemon": 4,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 8,
+      "depth": 6,
+      "height": 6
+    },
+    "materials": [
+      {
+        "item": "Stone",
+        "quantity": 25
+      },
+      {
+        "item": "Brick",
+        "quantity": 25
+      },
+      {
+        "item": "Seashell",
+        "quantity": 25
+      },
+      {
+        "item": "Beach sand",
+        "quantity": 25
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Water",
+        "Generate",
+        "Recycle"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/sandhousekit.png"
+  },
+  {
+    "slug": "stonedenkit",
+    "name": "Stone den kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 1,
+    "timeRequired": "15 minutes",
+    "size": {
+      "width": 2,
+      "depth": 2,
+      "height": 1
+    },
+    "materials": [
+      {
+        "item": "Stone",
+        "quantity": 5
+      },
+      {
+        "item": "Volcanic Ash",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/stonedenkit.png"
+  },
+  {
+    "slug": "stonehutkit",
+    "name": "Stone hut kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 1,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 3,
+      "depth": 3,
+      "height": 2
+    },
+    "materials": [
+      {
+        "item": "Stone",
+        "quantity": 10
+      },
+      {
+        "item": "Volcanic Ash",
+        "quantity": 20
+      },
+      {
+        "item": "Copper ingot",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Crush"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/stonehutkit.png"
+  },
+  {
+    "slug": "stonecottagekit",
+    "name": "Stone cottage kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 2,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 5,
+      "depth": 4,
+      "height": 2
+    },
+    "materials": [
+      {
+        "item": "Stone",
+        "quantity": 25
+      },
+      {
+        "item": "Brick",
+        "quantity": 25
+      },
+      {
+        "item": "Iron Ingot",
+        "quantity": 25
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Burn",
+        "Crush"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/stonecottagekit.png"
+  },
+  {
+    "slug": "stonehousekit",
+    "name": "Stone house kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 2,
+    "liveablePokemon": 4,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 8,
+      "depth": 6,
+      "height": 6
+    },
+    "materials": [
+      {
+        "item": "Stone",
+        "quantity": 25
+      },
+      {
+        "item": "Brick",
+        "quantity": 25
+      },
+      {
+        "item": "Iron Ingot",
+        "quantity": 25
+      },
+      {
+        "item": "Concrete",
+        "quantity": 25
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Burn",
+        "Hype",
+        "Crush"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/stonehousekit.png"
+  },
+  {
+    "slug": "citydenkit",
+    "name": "City den kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 1,
+    "timeRequired": "15 minutes",
+    "size": {
+      "width": 2,
+      "depth": 2,
+      "height": 1
+    },
+    "materials": [
+      {
+        "item": "Pokémetal",
+        "quantity": 5
+      },
+      {
+        "item": "Lumber",
+        "quantity": 5
+      },
+      {
+        "item": "Stone",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/citydenkit.png"
+  },
+  {
+    "slug": "cityhutkit",
+    "name": "City hut kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 1,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 3,
+      "depth": 3,
+      "height": 2
+    },
+    "materials": [
+      {
+        "item": "Pokémetal",
+        "quantity": 10
+      },
+      {
+        "item": "Lumber",
+        "quantity": 10
+      },
+      {
+        "item": "Stone",
+        "quantity": 10
+      },
+      {
+        "item": "Glass",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Gather"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/cityhutkit.png"
+  },
+  {
+    "slug": "citycottagekit",
+    "name": "City cottage kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 2,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 5,
+      "depth": 4,
+      "height": 2
+    },
+    "materials": [
+      {
+        "item": "Pokémetal",
+        "quantity": 20
+      },
+      {
+        "item": "Glass",
+        "quantity": 20
+      },
+      {
+        "item": "Brick",
+        "quantity": 20
+      },
+      {
+        "item": "Concrete",
+        "quantity": 20
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Gather",
+        "Fly"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/citycottagekit.png"
+  },
+  {
+    "slug": "cityhousekit",
+    "name": "City house kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 2,
+    "liveablePokemon": 4,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 8,
+      "depth": 6,
+      "height": 6
+    },
+    "materials": [
+      {
+        "item": "Pokémetal",
+        "quantity": 25
+      },
+      {
+        "item": "Glass",
+        "quantity": 25
+      },
+      {
+        "item": "Concrete",
+        "quantity": 25
+      },
+      {
+        "item": "Iron ingot",
+        "quantity": 25
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Gather",
+        "Fly",
+        "Teleport"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/cityhousekit.png"
+  },
+  {
+    "slug": "pokeballhousekit",
+    "name": "Poké Ball house kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": 1,
+    "liveablePokemon": 1,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 5,
+      "depth": 5,
+      "height": 2
+    },
+    "materials": [
+      {
+        "item": "Concrete",
+        "quantity": 10
+      },
+      {
+        "item": "Glass",
+        "quantity": 10
+      },
+      {
+        "item": "Pokémetal",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Engineer",
+        "Generate"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/pokeballhousekit.png"
+  },
+  {
+    "slug": "pokemartkit",
+    "name": "Poké Mart kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 4,
+      "depth": 3,
+      "height": 3
+    },
+    "materials": [
+      {
+        "item": "Concrete",
+        "quantity": 10
+      },
+      {
+        "item": "Glass",
+        "quantity": 10
+      },
+      {
+        "item": "Pokémetal",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Trade"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/pokemartkit.png"
+  },
+  {
+    "slug": "wastelandpokemoncenterkit",
+    "name": "Wasteland Pokémon Center kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": null,
+      "depth": null,
+      "height": null
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 20
+      },
+      {
+        "item": "Stone",
+        "quantity": 20
+      },
+      {
+        "item": "Leaf",
+        "quantity": 10
+      },
+      {
+        "item": "Vine Rope",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Bulldoze",
+        "Build",
+        "Chop"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/wastelandpokemoncenterkit.png"
+  },
+  {
+    "slug": "beachpokemoncenterkit",
+    "name": "Beach Pokémon Center kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": null,
+      "depth": null,
+      "height": null
+    },
+    "materials": [
+      {
+        "item": "Twine",
+        "quantity": 10
+      },
+      {
+        "item": "Brick",
+        "quantity": 30
+      },
+      {
+        "item": "Sea glass fragment",
+        "quantity": 10
+      },
+      {
+        "item": "Iron ore",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Bulldoze",
+        "Water"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/beachpokemoncenterkit.png"
+  },
+  {
+    "slug": "ridgepokemoncenterkit",
+    "name": "Ridge Pokémon Center kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": null,
+      "depth": null,
+      "height": null
+    },
+    "materials": [
+      {
+        "item": "Stone",
+        "quantity": 5
+      },
+      {
+        "item": "Coppe ingot",
+        "quantity": 25
+      },
+      {
+        "item": "Iron ingot",
+        "quantity": 25
+      },
+      {
+        "item": "Crystal fragment",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Bulldoze",
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/ridgepokemoncenterkit.png"
+  },
+  {
+    "slug": "skylandpokemoncenterkit",
+    "name": "Skyland Pokémon Center kit",
+    "description": "Description",
+    "concept": "Building with Interior",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": null,
+      "depth": null,
+      "height": null
+    },
+    "materials": [
+      {
+        "item": "Pokémetal",
+        "quantity": 25
+      },
+      {
+        "item": "Concrete",
+        "quantity": 25
+      },
+      {
+        "item": "Glass",
+        "quantity": 25
+      },
+      {
+        "item": "Gold",
+        "quantity": 25
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Bulldoze",
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/skylandpokemoncenterkit.png"
+  },
+  {
+    "slug": "windmillkit",
+    "name": "Windmill kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 2,
+      "depth": 2,
+      "height": 5
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 5
+      },
+      {
+        "item": "Twine",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/windmillkit.png"
+  },
+  {
+    "slug": "waterwheelkit",
+    "name": "Waterwheel kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 3,
+      "depth": 2,
+      "height": 3
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 15
+      },
+      {
+        "item": "Stone",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/waterwheelkit.png"
+  },
+  {
+    "slug": "furnacekit",
+    "name": "Furnace kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 2,
+      "depth": 2,
+      "height": 4
+    },
+    "materials": [
+      {
+        "item": "Iron ore",
+        "quantity": 15
+      },
+      {
+        "item": "Sea glass fragments",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/furnacekit.png"
+  },
+  {
+    "slug": "chargingstationkit",
+    "name": "Charging station kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 3,
+      "depth": 3,
+      "height": 2
+    },
+    "materials": [
+      {
+        "item": "Iron ingot",
+        "quantity": 10
+      },
+      {
+        "item": "Pokémetal",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/chargingstationkit.png"
+  },
+  {
+    "slug": "pikachufountainkit",
+    "name": "Pikachu fountain kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 6,
+      "depth": 6,
+      "height": 4
+    },
+    "materials": [
+      {
+        "item": "Brick",
+        "quantity": 10
+      },
+      {
+        "item": "Sea glass fragments",
+        "quantity": 5
+      },
+      {
+        "item": "Iron ore",
+        "quantity": 5
+      },
+      {
+        "item": "Stone",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/pikachufountainkit.png"
+  },
+  {
+    "slug": "moonlightdancestatuekit",
+    "name": "Moonlight dance statue kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 4,
+      "depth": 3,
+      "height": 3
+    },
+    "materials": [
+      {
+        "item": "Iron ingot",
+        "quantity": 10
+      },
+      {
+        "item": "Copper ingot",
+        "quantity": 10
+      },
+      {
+        "item": "Stone",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/moonlightdancestatuekit.png"
+  },
+  {
+    "slug": "pinkhutkit",
+    "name": "Pink hut kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 4,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 6,
+      "depth": 6,
+      "height": 6
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 10
+      },
+      {
+        "item": "Stone",
+        "quantity": 10
+      },
+      {
+        "item": "Leaf",
+        "quantity": 5
+      },
+      {
+        "item": "Squishy Clay",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Crush"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/pinkhutkit.png"
+  },
+  {
+    "slug": "pinkcottagekit",
+    "name": "Pink cottage kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 4,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 8,
+      "depth": 8,
+      "height": 8
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 20
+      },
+      {
+        "item": "Squishy clay",
+        "quantity": 20
+      },
+      {
+        "item": "Twine",
+        "quantity": 20
+      },
+      {
+        "item": "Seashell",
+        "quantity": 20
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Burn"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/pinkcottagekit.png"
+  },
+  {
+    "slug": "orangehutkit",
+    "name": "Orange hut kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 4,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 6,
+      "depth": 6,
+      "height": 6
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 10
+      },
+      {
+        "item": "Brick",
+        "quantity": 10
+      },
+      {
+        "item": "Twine",
+        "quantity": 5
+      },
+      {
+        "item": "Seashell",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Burn"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/orangehutkit.png"
+  },
+  {
+    "slug": "orangecottagekit",
+    "name": "Orange cottage kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": 2,
+    "liveablePokemon": 4,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 8,
+      "depth": 9,
+      "height": 9
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 20
+      },
+      {
+        "item": "Brick",
+        "quantity": 20
+      },
+      {
+        "item": "Twine",
+        "quantity": 20
+      },
+      {
+        "item": "Seashell",
+        "quantity": 20
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Gather"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/orangecottagekit.png"
+  },
+  {
+    "slug": "grayhutkit",
+    "name": "Gray hut kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 4,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 8,
+      "depth": 6,
+      "height": 7
+    },
+    "materials": [
+      {
+        "item": "Stone",
+        "quantity": 10
+      },
+      {
+        "item": "Limestone",
+        "quantity": 15
+      },
+      {
+        "item": "Glass",
+        "quantity": 5
+      },
+      {
+        "item": "Iron ignot",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Gather"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/grayhutkit.png"
+  },
+  {
+    "slug": "graycottagekit",
+    "name": "Gray cottage kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": 2,
+    "liveablePokemon": 4,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 8,
+      "depth": 9,
+      "height": 9
+    },
+    "materials": [
+      {
+        "item": "Iron ingot",
+        "quantity": 20
+      },
+      {
+        "item": "Gold ignot",
+        "quantity": 20
+      },
+      {
+        "item": "Limestone",
+        "quantity": 20
+      },
+      {
+        "item": "Stone",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Crush"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/graycottagekit.png"
+  },
+  {
+    "slug": "yellowhutkit",
+    "name": "Yellow hut kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 4,
+    "timeRequired": "1 hour",
+    "size": {
+      "width": 6,
+      "depth": 5,
+      "height": 7
+    },
+    "materials": [
+      {
+        "item": "Concrete",
+        "quantity": 10
+      },
+      {
+        "item": "Glass",
+        "quantity": 10
+      },
+      {
+        "item": "Iron Ignot",
+        "quantity": 5
+      },
+      {
+        "item": "Pokémetal",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Generate"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/yellowhutkit.png"
+  },
+  {
+    "slug": "yellowcottagekit",
+    "name": "Yellow cottage kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 4,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 10,
+      "depth": 10,
+      "height": 10
+    },
+    "materials": [
+      {
+        "item": "Iron ingot",
+        "quantity": 20
+      },
+      {
+        "item": "Concrete",
+        "quantity": 20
+      },
+      {
+        "item": "Pokémetal",
+        "quantity": 20
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Generate"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/yellowcottagekit.png"
+  },
+  {
+    "slug": "logcabinkit",
+    "name": "Log cabin kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 4,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 10,
+      "depth": 10,
+      "height": 8
+    },
+    "materials": [
+      {
+        "item": "Leaf",
+        "quantity": 20
+      },
+      {
+        "item": "Small log",
+        "quantity": 20
+      },
+      {
+        "item": "Lumber",
+        "quantity": 20
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Grow"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/logcabinkit.png"
+  },
+  {
+    "slug": "smallofficekit",
+    "name": "Small office kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 10,
+      "depth": 10,
+      "height": 7
+    },
+    "materials": [
+      {
+        "item": "Iron Ingot",
+        "quantity": 10
+      },
+      {
+        "item": "Concrete",
+        "quantity": 10
+      },
+      {
+        "item": "Glass",
+        "quantity": 10
+      },
+      {
+        "item": "Pokémetal",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Fly"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/smallofficekit.png"
+  },
+  {
+    "slug": "relaxingparkkit",
+    "name": "Relaxing park kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 10,
+      "depth": 10,
+      "height": 5
+    },
+    "materials": [],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/relaxingparkkit.png"
+  },
+  {
+    "slug": "stylishcafekit",
+    "name": "Stylish Café kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 10,
+      "depth": 10,
+      "height": 6
+    },
+    "materials": [],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/stylishcafekit.png"
+  },
+  {
+    "slug": "concertstagekit",
+    "name": "Concert stage kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 10,
+      "depth": 10,
+      "height": 6
+    },
+    "materials": [
+      {
+        "item": "Iron Ingot",
+        "quantity": 10
+      },
+      {
+        "item": "Glass",
+        "quantity": 5
+      },
+      {
+        "item": "Glowing stone",
+        "quantity": 10
+      },
+      {
+        "item": "Pokémetal",
+        "quantity": 5
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Hype"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/concertstagekit.png"
+  },
+  {
+    "slug": "fountainplazakit",
+    "name": "Fountain plaza kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 9,
+      "depth": 10,
+      "height": 6
+    },
+    "materials": [
+      {
+        "item": "Lumber",
+        "quantity": 20
+      },
+      {
+        "item": "Stone",
+        "quantity": 20
+      },
+      {
+        "item": "Copper Ore",
+        "quantity": 20
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Water"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/fountainplazakit.png"
+  },
+  {
+    "slug": "altarofflamekit",
+    "name": "Altar of Flame kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 35,
+      "depth": 42,
+      "height": 21
+    },
+    "materials": [
+      {
+        "item": "Copper ingot",
+        "quantity": 50
+      },
+      {
+        "item": "Gold ingot",
+        "quantity": 50
+      },
+      {
+        "item": "Lava rock",
+        "quantity": 50
+      },
+      {
+        "item": "Pokémetal",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Fly",
+        "Burn"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/altarofflamekit.png"
+  },
+  {
+    "slug": "abandonedpowerplantkit",
+    "name": "Abandoned Power Plant kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 31,
+      "depth": 29,
+      "height": 17
+    },
+    "materials": [
+      {
+        "item": "Copper ingot",
+        "quantity": 50
+      },
+      {
+        "item": "Iron ingot",
+        "quantity": 50
+      },
+      {
+        "item": "Sea glass fragment",
+        "quantity": 50
+      },
+      {
+        "item": "Brick",
+        "quantity": 50
+      },
+      {
+        "item": "Pokémetal",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Fly",
+        "Crush"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/abandonedpowerplantkit.png"
+  },
+  {
+    "slug": "freezingchamberskit",
+    "name": "Freezing Chambers kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 42,
+      "depth": 26,
+      "height": 14
+    },
+    "materials": [
+      {
+        "item": "Stone",
+        "quantity": 50
+      },
+      {
+        "item": "Ice",
+        "quantity": 50
+      },
+      {
+        "item": "Crystal Fragment",
+        "quantity": 10
+      },
+      {
+        "item": "Pokémetal",
+        "quantity": 10
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build",
+        "Water",
+        "Search"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/freezingchamberskit.png"
+  },
+  {
+    "slug": "mysteriousmuralkit",
+    "name": "Mysterious mural kit",
+    "description": "Description",
+    "concept": "Overworld",
+    "floors": null,
+    "liveablePokemon": 0,
+    "timeRequired": "Next day",
+    "size": {
+      "width": 12,
+      "depth": 2,
+      "height": 5
+    },
+    "materials": [
+      {
+        "item": "Pokémetal",
+        "quantity": 99
+      }
+    ],
+    "pokemonRequired": {
+      "count": null,
+      "specialties": [
+        "Build"
+      ]
+    },
+    "imageUrl": "https://www.serebii.net/pokemonpokopia/build/mysteriousmuralkit.png"
+  }
+]

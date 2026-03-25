@@ -1,10 +1,26 @@
 import { useState, useMemo } from 'react';
 import itemsData from '../data/items.json';
+import buildingKitsData from '../data/building-kits.json';
 import type { CraftingItem } from '../types/pokemon';
 
-const items = itemsData as CraftingItem[];
+interface BuildingKit {
+  slug: string;
+  name: string;
+  description: string;
+  concept: string;
+  floors: number | null;
+  liveablePokemon: number | null;
+  timeRequired: string;
+  size: { width: number | null; depth: number | null; height: number | null };
+  materials: Array<{ item: string; quantity: number }>;
+  pokemonRequired: { count: number | null; specialties: string[] };
+  imageUrl: string;
+}
 
-const CATEGORIES = ['All', 'Furniture', 'Misc.', 'Outdoor', 'Utilities', 'Buildings', 'Blocks', 'Other'];
+const items = itemsData as CraftingItem[];
+const buildingKits = buildingKitsData as BuildingKit[];
+
+const CATEGORIES = ['All', 'Furniture', 'Misc.', 'Outdoor', 'Utilities', 'Buildings', 'Blocks', 'Other', 'Building Kits'];
 
 const CATEGORY_ICONS: Record<string, string> = {
   Furniture: '🪑',
@@ -14,6 +30,7 @@ const CATEGORY_ICONS: Record<string, string> = {
   Buildings: '🏗️',
   Blocks: '🧱',
   Other: '✨',
+  'Building Kits': '🏠',
 };
 
 const CATEGORY_COLORS: Record<string, { bg: string; border: string; badge: string; text: string }> = {
@@ -23,7 +40,8 @@ const CATEGORY_COLORS: Record<string, { bg: string; border: string; badge: strin
   Utilities:   { bg: 'bg-purple-900/30', border: 'border-purple-700/40', badge: 'bg-purple-900/50 text-purple-300 border-purple-700/50', text: 'text-purple-400' },
   Buildings:   { bg: 'bg-orange-900/30', border: 'border-orange-700/40', badge: 'bg-orange-900/50 text-orange-300 border-orange-700/50', text: 'text-orange-400' },
   Blocks:      { bg: 'bg-stone-800/40',  border: 'border-stone-600/40',  badge: 'bg-stone-800/60 text-stone-300 border-stone-600/50',   text: 'text-stone-400' },
-  Other:       { bg: 'bg-pink-900/30',   border: 'border-pink-700/40',   badge: 'bg-pink-900/50 text-pink-300 border-pink-700/50',      text: 'text-pink-400' },
+  Other:         { bg: 'bg-pink-900/30',   border: 'border-pink-700/40',   badge: 'bg-pink-900/50 text-pink-300 border-pink-700/50',      text: 'text-pink-400' },
+  'Building Kits': { bg: 'bg-stone-800/40', border: 'border-stone-600/40',  badge: 'bg-stone-800/60 text-stone-200 border-stone-600/50',    text: 'text-stone-300' },
 };
 
 const DEFAULT_STYLE = { bg: 'bg-gray-800/40', border: 'border-gray-700/50', badge: 'bg-gray-800 text-gray-300 border-gray-600', text: 'text-gray-400' };
@@ -39,6 +57,7 @@ export function CraftingDex() {
   const [sortField, setSortField] = useState<SortField>('name');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [selectedKit, setSelectedKit] = useState<BuildingKit | null>(null);
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -58,9 +77,13 @@ export function CraftingDex() {
 
   const active = hasActiveFilters(search, category);
 
-  const filtered = useMemo(() => {
+  const showingKits = category === 'Building Kits';
+  const showingAll  = category === 'All';
+
+  const filteredItems = useMemo(() => {
+    if (showingKits) return [];
     let result = items;
-    if (category !== 'All') result = result.filter(item => item.category === category);
+    if (!showingAll) result = result.filter(item => item.category === category);
     if (search.trim()) {
       const q = search.trim().toLowerCase();
       result = result.filter(item =>
@@ -73,7 +96,29 @@ export function CraftingDex() {
       const cmp = a[sortField].toLowerCase().localeCompare(b[sortField].toLowerCase());
       return sortDir === 'asc' ? cmp : -cmp;
     });
-  }, [search, category, sortField, sortDir]);
+  }, [search, category, sortField, sortDir, showingKits, showingAll]);
+
+  const filteredKits = useMemo(() => {
+    if (!showingKits && !showingAll) return [];
+    const q = search.trim().toLowerCase();
+    let result = buildingKits;
+    if (q) {
+      result = result.filter(k =>
+        k.name.toLowerCase().includes(q) ||
+        k.concept.toLowerCase().includes(q) ||
+        k.materials.some(m => m.item.toLowerCase().includes(q)) ||
+        k.pokemonRequired.specialties.some(s => s.toLowerCase().includes(q))
+      );
+    }
+    return [...result].sort((a, b) =>
+      sortDir === 'asc'
+        ? a.name.localeCompare(b.name)
+        : b.name.localeCompare(a.name)
+    );
+  }, [search, category, sortDir, showingKits, showingAll]);
+
+  const totalShowing = filteredItems.length + filteredKits.length;
+  const totalAll = items.length + buildingKits.length;
 
   const sidebar = (
     <div className="space-y-5">
@@ -158,9 +203,9 @@ export function CraftingDex() {
     <div className="flex flex-col gap-6">
       {/* Header */}
       <div>
-        <h2 className="text-2xl font-bold text-white mb-1">Crafting Recipes</h2>
+        <h2 className="text-2xl font-bold text-white mb-1">Crafting &amp; Building</h2>
         <p className="text-gray-400 text-sm">
-          {items.length} craftable items across {CATEGORIES.length - 1} categories.{' '}
+          {items.length} craftable items and {buildingKits.length} building kits.{' '}
           Data from{' '}
           <a href="https://www.serebii.net/pokemonpokopia/crafting.shtml" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
             Serebii
@@ -202,10 +247,10 @@ export function CraftingDex() {
         {/* Grid */}
         <div className="flex-1 min-w-0">
           <p className="text-sm text-gray-400 mb-4">
-            Showing <span className="text-white font-semibold">{filtered.length}</span> of {items.length} items
+            Showing <span className="text-white font-semibold">{totalShowing}</span> of {showingAll ? totalAll : showingKits ? buildingKits.length : items.length} items
           </p>
 
-          {filtered.length === 0 ? (
+          {totalShowing === 0 ? (
             <div className="flex flex-col items-center justify-center py-20 text-gray-500 gap-3">
               <span className="text-4xl">🔨</span>
               <p className="text-lg font-medium">No items match your filters</p>
@@ -215,10 +260,17 @@ export function CraftingDex() {
             </div>
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 xl:grid-cols-4 gap-3">
-              {filtered.map((item, idx) => (
-                <CraftingCard key={`${item.name}-${idx}`} item={item} />
+              {filteredItems.map((item, idx) => (
+                <CraftingCard key={`item-${item.name}-${idx}`} item={item} />
+              ))}
+              {filteredKits.map((kit) => (
+                <BuildingKitCard key={`kit-${kit.slug}`} kit={kit} onClick={() => setSelectedKit(kit)} />
               ))}
             </div>
+          )}
+
+          {selectedKit && (
+            <BuildingKitModal kit={selectedKit} onClose={() => setSelectedKit(null)} />
           )}
         </div>
       </div>
@@ -278,6 +330,154 @@ function CraftingCard({ item }: { item: CraftingItem }) {
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Building Kit Card
+// ---------------------------------------------------------------------------
+const TIME_ICONS: Record<string, string> = {
+  '15 minutes': '⏱️',
+  '1 hour': '🕐',
+  'Next day': '🌙',
+};
+
+function BuildingKitCard({ kit, onClick }: { kit: BuildingKit; onClick: () => void }) {
+  const [imgError, setImgError] = useState(false);
+  const style = CATEGORY_COLORS['Building Kits'];
+
+  return (
+    <button
+      onClick={onClick}
+      className={`flex flex-col rounded-2xl border overflow-hidden backdrop-blur-sm text-left w-full
+        ${style.border} bg-slate-900/60 hover:bg-slate-800/70 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl`}
+    >
+      {/* Image area */}
+      <div className={`flex items-center justify-center pt-6 pb-3 ${style.bg} relative`}>
+        {!imgError ? (
+          <img
+            src={kit.imageUrl}
+            alt={kit.name}
+            className="w-20 h-20 object-contain drop-shadow-lg"
+            loading="lazy"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <span className="text-5xl select-none">🏠</span>
+        )}
+        <span className="absolute top-2 right-2 text-xs bg-gray-900/70 border border-gray-700/50 text-gray-300 px-1.5 py-0.5 rounded-full">
+          {TIME_ICONS[kit.timeRequired] ?? '🔨'} {kit.timeRequired}
+        </span>
+      </div>
+
+      {/* Info */}
+      <div className="flex flex-col gap-2 p-3 flex-1">
+        <h3 className="font-semibold text-gray-100 text-sm leading-tight">{kit.name}</h3>
+
+        <span className={`self-start inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium border ${style.badge}`}>
+          🏠 Building Kit
+        </span>
+
+        <div className="flex flex-wrap gap-1 mt-auto">
+          <span className="text-xs text-gray-400">{kit.concept}</span>
+          {kit.size.width && (
+            <span className="text-xs text-gray-500">· {kit.size.width}×{kit.size.depth}×{kit.size.height}</span>
+          )}
+        </div>
+      </div>
+    </button>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Building Kit Modal
+// ---------------------------------------------------------------------------
+function BuildingKitModal({ kit, onClose }: { kit: BuildingKit; onClose: () => void }) {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      <div
+        className="relative z-10 w-full max-w-lg rounded-2xl bg-gray-900 border border-gray-700/60 shadow-2xl overflow-hidden"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="relative flex items-center gap-4 p-5 bg-stone-800/50 border-b border-stone-700/40">
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800/60 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
+          >✕</button>
+          {!imgError ? (
+            <img src={kit.imageUrl} alt={kit.name} className="w-20 h-20 object-contain drop-shadow-lg flex-shrink-0"
+              onError={() => setImgError(true)} />
+          ) : (
+            <span className="text-5xl">🏠</span>
+          )}
+          <div>
+            <h2 className="text-xl font-bold text-white leading-tight">{kit.name}</h2>
+            {kit.description && (
+              <p className="text-xs text-gray-400 mt-1 leading-snug">{kit.description}</p>
+            )}
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="p-5 flex flex-col gap-5 overflow-y-auto max-h-[60vh]">
+          {/* Info row */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {kit.concept && (
+              <StatBox label="Concept" value={kit.concept} />
+            )}
+            <StatBox label="Time" value={`${TIME_ICONS[kit.timeRequired] ?? ''} ${kit.timeRequired}`} />
+            {kit.liveablePokemon != null && (
+              <StatBox label="Liveable Pokémon" value={String(kit.liveablePokemon)} />
+            )}
+            {kit.size.width != null && (
+              <StatBox label="Size" value={`${kit.size.width}W × ${kit.size.depth}D × ${kit.size.height}H`} />
+            )}
+          </div>
+
+          {/* Materials */}
+          {kit.materials.length > 0 && (
+            <section>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-3">Materials</h3>
+              <div className="flex flex-wrap gap-2">
+                {kit.materials.map((m, i) => (
+                  <MaterialChip key={i} name={m.item} quantity={m.quantity} />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Pokémon Required */}
+          {(kit.pokemonRequired.count != null || kit.pokemonRequired.specialties.length > 0) && (
+            <section>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-3">Pokémon Required</h3>
+              <div className="flex flex-wrap items-center gap-2">
+                {kit.pokemonRequired.count != null && (
+                  <span className="text-sm text-gray-300 font-medium">{kit.pokemonRequired.count} Pokémon with:</span>
+                )}
+                {kit.pokemonRequired.specialties.map(s => (
+                  <span key={s} className="text-xs px-2.5 py-1 rounded-lg border bg-indigo-900/40 border-indigo-700/50 text-indigo-200 font-semibold">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StatBox({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex flex-col gap-1 bg-gray-800/50 border border-gray-700/40 rounded-xl p-3 text-center">
+      <span className="text-xs text-gray-500 uppercase tracking-wide">{label}</span>
+      <span className="text-sm font-semibold text-gray-100 leading-tight">{value}</span>
     </div>
   );
 }
